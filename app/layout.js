@@ -10,9 +10,7 @@ const ovo = Ovo({
 });
 
 const jetbrainsMono = JetBrains_Mono({
-  subsets: ["latin"],
-  weight: ["400"],
-  variable: '--font-jetbrains',
+  subsets: ["latin"], weight: ["400"], variable: '--font-jetbrains',
 });
 
 export const metadata = {

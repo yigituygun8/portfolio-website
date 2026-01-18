@@ -2,8 +2,8 @@
 import React, { useRef } from 'react'
 import Image from 'next/image'
 import {assets} from '@/assets/assets.js'
-import { JetBrains_Mono } from 'next/font/google'
-const jetbrainsMono = JetBrains_Mono({ subsets: ["latin"] });
+// import { JetBrains_Mono } from 'next/font/google'
+// const jetbrainsMono = JetBrains_Mono({ subsets: ["latin"] });
 
 const Navbar = () => {
     // useRef is a React hook that allows you to create a reference to a DOM element or a value that persists across renders
@@ -26,7 +26,7 @@ const Navbar = () => {
         <nav className="w-full fixed px-5 lg:px-8 xl:px-[8%] py-4 flex items-center justify-between z-50">
             {/* I WILL ADD MY OWN LOGO WITH TEXT LIKE THIS: <OYU /> */}
             <a href="#top">
-                <span className={jetbrainsMono.className}>{'{'}O.Y.U{'}'}</span>
+                <span className="font-jetbrains">{'{'}O.Y.U{'}'}</span>
             </a>
             <ul className='hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3 bg-white shadow-sm bg-opacity-50'>
                 <li><a href="#top" className='font-ovo'>Home</a></li>

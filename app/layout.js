@@ -14,8 +14,11 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata = {
-  title: "Osman Yiğit Uygun - Portfolio",
+  title: "Osman Yiğit Uygun",
   description: "Osman Yiğit Uygun's personal portfolio website.",
+  icons: {
+    icon: "/icon.svg",
+  },
 };
 
 export default function RootLayout({ children }) {

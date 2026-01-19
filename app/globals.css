@@ -10,3 +10,16 @@
   --shadow-black: 4px 4px 0 #000;
   --shadow-white: 4px 4px 0 #fff;
 }
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.cursor-blink {
+  animation: blink 1.8s steps(1) infinite;
+}

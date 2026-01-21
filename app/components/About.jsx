@@ -14,16 +14,24 @@ const About = () => {
             </div>
             <div>
                 <p className='mb-10 max-w-3xl'>
-                    I am a sophomore student at <strong>Bilkent University</strong>, pursuing a degree in <strong>Computer Technology and Information Systems (CTIS)</strong>. My passion lies in <strong>backend and web development</strong>, where I enjoy creating projects and doing research in different areas of software development to expand my knowledge. I am also interested in data structures & algorithms to challenge myself and enhance my problem solving skills. Other than coursework, tutoring others is something I find incredibly rewarding, as it allows me to solidify my own understanding while also helping others grow. 
+                    I am a sophomore student at <strong>Bilkent University</strong>, pursuing a degree in <strong>Information Systems and Technologies (CTIS)</strong>. My passion lies in <strong>backend and web development</strong>, where I enjoy creating projects and doing research in different areas of software development to expand my knowledge. I am also interested in data structures & algorithms to challenge myself and enhance my problem solving skills. Other than coursework, tutoring others is something I find incredibly rewarding, as it allows me to solidify my own understanding while also helping others grow. 
                 </p>
                 <ul className='grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl'>
                     {infoList.map(({icon, iconDark, title, description}, index) => {
-                        return (
+                        const isLast = index === infoList.length - 1;
+                        const content = (
                             <li key={index} className='border-[0.5px] border-gray-400 rounded-xl p-6 cursor-pointer hover:bg-lightHover hover:-translate-y-1 duration-300 hover:shadow-black'> 
                                 <Image src={icon} alt={title} className='w-7 mt-3'></Image>
                                 <h3 className='font-semibold text-gray-700 my-4'>{title}</h3>
                                 <p className='text-gray-600 text-sm'>{description}</p>
                             </li>
+                        );
+                        return isLast ? (
+                            <a href="https://github.com/yigituygun8" target="_blank" rel="noopener noreferrer" key={index}> {/* noopener and noreferrer are security features to prevent the new page from having access to the window object of the page that opened it */}
+                                {content}
+                            </a>
+                        ) : (
+                            content                           
                         );
                     })}
                 </ul>

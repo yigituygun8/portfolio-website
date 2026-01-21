@@ -7,6 +7,7 @@ import project_icon from './project-icon.png';
 import project_icon_dark from './project-icon-dark.png';
 import vscode from './vscode.svg';
 import git from './git.svg';
+import nodejs from './nodejs.svg';
 import nextjs from './nextjs.svg';
 import intellij from './intellij.svg';
 import right_arrow_white from './right-arrow-white.png';
@@ -36,6 +37,7 @@ import right_arrow_bold from './right-arrow-bold.png';
 import right_arrow_bold_dark from './right-arrow-bold-dark.png';
 import sql from './sql.svg';
 import flyway from './flyway.svg';
+import linkedin_white from './linkedin-white.svg';
 import maven from './maven.svg';
 
 export const assets = {
@@ -43,11 +45,13 @@ export const assets = {
     code_icon,
     code_icon_dark,
     edu_icon,
+    linkedin_white,
     edu_icon_dark,
     project_icon,
     project_icon_dark,
     vscode,
     git,
+    nodejs,
     intellij,
     sql,
     nextjs,
@@ -113,12 +117,13 @@ export const serviceData = [
 export const infoList = [
     { icon: assets.code_icon, iconDark: assets.code_icon_dark, title: 'Languages', description: 'Java | C | JavaScript | PL/SQL | Python' },
     { icon: assets.edu_icon, iconDark: assets.edu_icon_dark, title: 'Education', description: 'BSc at CTIS, Bilkent University' },
-    { icon: assets.project_icon, iconDark: assets.project_icon_dark, title: 'Projects', description: 'Available in GitHub Repositories' }
+    { icon: assets.project_icon, iconDark: assets.project_icon_dark, title: 'Projects', description: 'Available in GitHub Repos | Click To View' }
 ];
 
 export const toolsData = [
     {title: "Git", icon: assets.git},
     {title: "SQL", icon: assets.sql},
+    {title: "Node.js", icon: assets.nodejs},
     {title: "Next.js", icon: assets.nextjs},
     {title: "Flyway", icon: assets.flyway},
     {title: "Maven", icon: assets.maven},

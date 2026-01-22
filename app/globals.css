@@ -9,6 +9,7 @@
   --color-darkTheme: #11001f;
   --shadow-black: 4px 4px 0 #000;
   --shadow-white: 4px 4px 0 #fff;
+  --gridTemplateColumns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid template columns, adjusts how many columns are displayed based on available space */
 }
 
 @keyframes blink {
@@ -22,4 +23,15 @@
 
 .cursor-blink {
   animation: blink 1.8s steps(1) infinite;
+}
+
+/* For the boxes in About me and Services sections */
+.hover-light {
+  transition: all 0.3s ease;
+}
+
+.hover-light:hover {
+  box-shadow: var(--shadow-black);
+  background-color: var(--color-lightHover);
+  transform: translateY(-3px);
 }

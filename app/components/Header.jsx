@@ -44,7 +44,7 @@ const Header = () => {
         
           <a href="https://www.linkedin.com/in/osmanyigituygun8/" target="_blank" rel="noopener noreferrer" className="text-[18px] px-10 py-3 border border-white rounded-full bg-[#0c5094] text-white flex items-center gap-2 scale-100 hover:scale-105 transition-transform duration-200 ease-out">LinkedIn 
           <Image src={assets.linkedin_white} alt="" className="w-4"></Image>
-          </a>é
+          </a>
       </div>
     </section>
   );

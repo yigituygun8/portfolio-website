@@ -20,7 +20,7 @@ const About = () => {
                     {infoList.map(({icon, iconDark, title, description}, index) => {
                         const isLast = index === infoList.length - 1;
                         const content = (
-                            <li key={index} className='border-[0.5px] border-gray-400 rounded-xl p-6 cursor-pointer hover:bg-lightHover hover:-translate-y-1 duration-300 hover:shadow-black'> 
+                            <li key={index} className='border-[0.5px] border-gray-400 rounded-xl p-6 cursor-pointer hover-light'> 
                                 <Image src={icon} alt={title} className='w-7 mt-3'></Image>
                                 <h3 className='font-semibold text-gray-700 my-4'>{title}</h3>
                                 <p className='text-gray-600 text-sm'>{description}</p>

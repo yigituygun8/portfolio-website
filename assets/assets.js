@@ -27,11 +27,9 @@ import menu_black from './menu-black.svg';
 import menu_white from './menu-white.svg';
 import close_black from './close-black.svg';
 import close_white from './close-white.svg';
-import web_icon from './web-icon.png';
-import mobile_icon from './mobile-icon.png';
-import ui_icon from './ui-icon.png';
-import graphics_icon from './graphics-icon.png';
-import right_arrow from './right-arrow.png';
+import programming_black from './programming-black.svg';
+import right_arrow from './right-arrow.svg';
+import book from './book.svg';
 import send_icon from './send-icon.png';
 import right_arrow_bold from './right-arrow-bold.png';
 import right_arrow_bold_dark from './right-arrow-bold-dark.png';
@@ -39,6 +37,7 @@ import sql from './sql.svg';
 import flyway from './flyway.svg';
 import linkedin_white from './linkedin-white.svg';
 import maven from './maven.svg';
+import development from './development.svg';
 
 export const assets = {
     user_image,
@@ -74,14 +73,13 @@ export const assets = {
     menu_white,
     close_black,
     close_white,
-    web_icon,
-    mobile_icon,
-    ui_icon,
-    graphics_icon,
     right_arrow,
     send_icon,
     right_arrow_bold,
-    right_arrow_bold_dark
+    right_arrow_bold_dark,
+    programming_black,
+    book,
+    development
 };
 
 export const workData = [
@@ -108,10 +106,22 @@ export const workData = [
 ]
 
 export const serviceData = [
-    { icon: assets.web_icon, title: 'Web design', description: 'Web development is the process of building, programming...', link: '' },
-    { icon: assets.mobile_icon, title: 'Mobile app', description: 'Mobile app development involves creating software for mobile devices...', link: '' },
-    { icon: assets.ui_icon, title: 'UI/UX design', description: 'UI/UX design focuses on creating a seamless user experience...', link: '' },
-    { icon: assets.graphics_icon, title: 'Graphics design', description: 'Creative design solutions to enhance visual communication...', link: '' },
+    { icon: assets.programming_black, title: 'Programming Lessons', description: (
+        <>
+            Tutoring university students in languages such as <strong>Java, C, Python</strong>. Helping students succeed in coursework and exam preparation across different universities.
+        </>
+    ), link: '#contact' },
+    { icon: assets.book, title: 'Middle & High School Tutoring', description: (
+        <>
+            Personalized tutoring for middle school and high school students. Focused on preparing for university entrance exams, <strong>MSÜ & YKS</strong>.
+        </>
+    ), link: '#contact' },
+    { icon: assets.development, title: 'Development ', description: (
+        <>
+            End-to-end web development for small to medium projects.
+            From <strong>UI implementation to backend logic and database design</strong>, tailored to project needs.
+        </>
+    ), link: 'https://github.com/yigituygun8?tab=repositories' },
 ]
 
 export const infoList = [

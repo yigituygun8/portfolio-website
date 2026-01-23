@@ -64,9 +64,9 @@ const Navbar = () => {
             {/* Right: Buttons */}
             <div className="flex-1 flex items-center justify-end gap-4">
                 <button>
-                    <Image src={assets.moon_icon} alt="Theme Icon" className='w-9 cursor-pointer'></Image>
+                    {/* <Image src={assets.moon_icon} alt="Theme Icon" className='w-9 cursor-pointer'></Image> WILL BE ADDED IN VERSION 1.1 FOR DARK THEME */}
                 </button>
-                    <a href="#contact" className="hidden lg:flex items-center gap-3 px-10 py-2.5 border border-gray-500 rounded-full ml-4 transition-transform duration-200 hover:scale-105 hover:border-black">Contact 
+                    <a href="#contact" className="hidden lg:flex items-center gap-3 px-10 py-2.5 border border-gray-500 rounded-full ml-4 transition duration-400 hover:scale-105 hover:border-black hover:bg-lightHover">Contact 
                     <Image src={assets.arrow_icon} className="w-5" alt='Arrow Icon'></Image>
                 </a>
                 <button className="block lg:hidden ml-3" onClick={openMenu}>

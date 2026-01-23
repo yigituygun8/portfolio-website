@@ -85,27 +85,21 @@ export const assets = {
 export const workData = [
     {
         title: 'AROS Loot Shop',
-        description: 'Java & Swing App',
+        description: 'Java OOP & Swing GUI',
         bgImage: '/aros.png',
         link: 'https://github.com/yigituygun8/aros-lootshop'
     },
     {
         title: 'Tile-Clicking Game',
-        description: 'CSS & JS & DOM API',
+        description: 'HTML & CSS & JS & DOM API',
         bgImage: '/tile-click.png',
         link: 'https://github.com/yigituygun8/frontend-game-project'
     },
     {
-        title: 'Photography site',
-        description: 'Web Design',
-        bgImage: '/work-3.png',
-        link: ''
-    },
-    {
-        title: 'UI/UX designing',
-        description: 'UI/UX Design',
-        bgImage: '/work-4.png',
-        link: ''
+        title: 'AI-Based Garbage Detection',
+        description: 'Python & YOLOv3',
+        bgImage: '/garbage.png',
+        link: 'https://github.com/yigituygun8/GarbageDetection_AIProject'
     },
 ]
 

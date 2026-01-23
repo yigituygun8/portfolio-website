@@ -7,6 +7,7 @@ const SECTION_PATHS = {
   projects: "projects",
   services: "services",
   contact: "contact",
+  footer: "end"
 };
 
 // For dynamically updating the navbar path based on scroll position
@@ -19,15 +20,29 @@ export default function NavbarPath() {
 
       let current = "top";
 
-      sections.forEach((section) => {
-        const rect = section.getBoundingClientRect(); // Get the size of the element and its position relative to the viewport
+      // If user scrolled to (or very near) the bottom, treat it as the footer (end)
+      const atBottom = (window.innerHeight + window.scrollY) >= (document.documentElement.scrollHeight - 5);
+      if (atBottom) {
+        current = "footer";
+      } else {
+        sections.forEach((section) => {
+          const rect = section.getBoundingClientRect(); // Get the size of the element and its position relative to the viewport
 
-        if (rect.top <= 150 && rect.bottom >= 150) {
-          current = section.id;
-        }
-      });
-        setPath(SECTION_PATHS[current]);
-      
+          if (rect.top <= 150 && rect.bottom >= 150) {
+            current = section.id;
+          }
+        });
+      }
+
+      // Update the displayed path (fall back to empty string when mapping is empty)
+      const newPath = SECTION_PATHS[current] ?? "";
+      setPath(newPath);
+
+      // Update URL hash without adding a history entry
+      const desiredHash = `#${current}`;
+      if (window.location.hash !== desiredHash) {
+        history.replaceState(null, "", desiredHash);
+      }
     };
 
     window.addEventListener("scroll", handleScroll);

@@ -6,9 +6,9 @@ const Projects = () => {
   return (
     <section id="projects" className='w-full px-[12%] py-10 font-jetbrains scroll-mt-28'>
         <h4 className='text-center mb-2 text-lg'>What I Did</h4>
-        <h2 className='text-center text-5xl mb-8'> ./Projects</h2>
+        <h2 className='text-center text-4xl sm:text-5xl'> ./Projects</h2>
 
-        <p className='text-center max-w-4xl mx-auto mt-5 mb-12'>
+        <p className='text-center max-w-full mx-auto mt-5 mb-12'>
             Including my university coursework projects and personal projects, you can find all of them in my <a href="https://github.com/yigituygun8?tab=repositories" target="_blank" rel="noopener noreferrer" className="text-blue-800 underline">GitHub repositories</a>. These projects help me grow and enhance my skills in software development as a future, aspiring software developer whilst improving my collaboration and problem-solving abilities. 
         </p>
         
@@ -28,7 +28,7 @@ const Projects = () => {
             ))}
         </div> 
       
-        <a href="https://github.com/yigituygun8?tab=repositories" target="_blank" rel="noopener noreferrer" className='w-max flex items-center justify-center gap-2 border-[0.5px] border-gray-700 rounded-full py-3 px-10 mx-auto hover:bg-lightHover hover:scale-105 duration-300 transition'>
+        <a href="https://github.com/yigituygun8?tab=repositories" target="_blank" rel="noopener noreferrer" className='max-w-lg flex items-center justify-center gap-2 border-[0.5px] border-gray-700 rounded-full py-3 px-10 mx-auto hover:bg-lightHover hover:scale-105 duration-300 transition'>
             More of Projects & Personal Notes
             <Image src={assets.right_arrow_bold} alt="" className='w-4'/>
             </a>

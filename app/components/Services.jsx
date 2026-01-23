@@ -6,9 +6,9 @@ const Services = () => {
   return (
     <section id="services" className='w-full px-[12%] py-10 font-jetbrains scroll-mt-28'>
         <h4 className='text-center mb-2 text-lg'>What I Offer</h4>
-        <h2 className='text-center text-5xl mb-8'> ./My Services</h2>
+        <h2 className='text-center text-4xl sm:text-5xl mb-8'> ./My Services</h2>
 
-        <p className='text-center max-w-4xl mx-auto mt-5 mb-12'>
+        <p className='text-center max-w-full mx-auto mt-5 mb-12'>
             I&apos;ve been a <strong>private tutor</strong> for university and high school students for about 1.5 years, alongside my <strong>undergraduate teaching assistant experience</strong> at Bilkent University.
             I also provide <strong>frontend, backend, and database development services</strong> for small to medium-scale projects.
         </p>

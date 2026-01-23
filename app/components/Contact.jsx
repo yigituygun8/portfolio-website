@@ -23,7 +23,7 @@ const Contact = () => {
   return (
     <section id="contact" className='w-full px-[12%] py-10 font-jetbrains scroll-mt-28 bg-[url("/footer-bg-color.png")] bg-size-[90%_auto] bg-no-repeat bg-center'>
         <h4 className='text-center mb-2 text-lg'>Get In Touch</h4>
-        <h2 className='text-center text-5xl mb-8'> ./Contact</h2>
+        <h2 className='text-center text-4xl sm:text-5xl mb-8'> ./Contact</h2>
 
         <p className='text-center max-w-4xl mx-auto mt-5 mb-12'>
             I&apos;d love to hear from you! Your <strong>feedback, questions, collaboration ideas</strong> or <strong>private tutoring</strong> requests are always welcome. Feel free to reach out to me. 

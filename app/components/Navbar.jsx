@@ -54,10 +54,10 @@ const Navbar = () => {
             <ul className={`hidden lg:flex items-center gap-6 lg:gap-8 rounded-full 
                 lg:px-12 py-3 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 
                 ${isScrolled ? '' : 'bg-white/50 shadow-sm'}`}>
-                <li><a href="#top" className="transition-colors duration-200 hover:text-blue-800">Home</a></li>
-                <li><a href="#about" className="transition-colors duration-200 hover:text-blue-800">About Me</a></li>
-                <li><a href="#projects" className="transition-colors duration-200 hover:text-blue-800">Projects</a></li>
-                <li><a href="#services" className="transition-colors duration-200 hover:text-blue-800">Services</a></li>
+                <li><a href="#top" className="transition-all duration-200 hover:text-blue-800 hover:underline">Home</a></li>
+                <li><a href="#about" className="transition-all duration-200 hover:text-blue-800 hover:underline">About Me</a></li>
+                <li><a href="#projects" className="transition-all duration-200 hover:text-blue-800 hover:underline">Projects</a></li>
+                <li><a href="#services" className="transition-all duration-200 hover:text-blue-800 hover:underline">Services</a></li>
                 {/* <li><a href="#contact" className="transition-colors duration-200 hover:text-blue-800">Contact Me</a></li> */}
             </ul>
 

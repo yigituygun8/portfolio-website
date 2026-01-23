@@ -31,7 +31,7 @@ import programming_black from './programming-black.svg';
 import right_arrow from './right-arrow.svg';
 import book from './book.svg';
 import send_icon from './send-icon.png';
-import right_arrow_bold from './right-arrow-bold.png';
+import right_arrow_bold from './right-arrow-bold.svg';
 import right_arrow_bold_dark from './right-arrow-bold-dark.png';
 import sql from './sql.svg';
 import flyway from './flyway.svg';
@@ -84,24 +84,28 @@ export const assets = {
 
 export const workData = [
     {
-        title: 'Frontend project',
-        description: 'Web Design',
-        bgImage: '/work-1.png',
+        title: 'AROS Loot Shop',
+        description: 'Java & Swing App',
+        bgImage: '/aros.png',
+        link: 'https://github.com/yigituygun8/aros-lootshop'
     },
     {
-        title: 'Geo based app',
-        description: 'Mobile App',
-        bgImage: '/work-2.png',
+        title: 'Tile-Clicking Game',
+        description: 'CSS & JS & DOM API',
+        bgImage: '/tile-click.png',
+        link: 'https://github.com/yigituygun8/frontend-game-project'
     },
     {
         title: 'Photography site',
         description: 'Web Design',
         bgImage: '/work-3.png',
+        link: ''
     },
     {
         title: 'UI/UX designing',
         description: 'UI/UX Design',
         bgImage: '/work-4.png',
+        link: ''
     },
 ]
 

@@ -14,16 +14,16 @@ const About = () => {
             </div>
             <div className='flex-1 flex flex-col items-center md:items-start'>
                 <p className='mb-10 max-w-full text-center sm:text-left sm:max-w-4xl text-sm sm:text-base leading-relaxed'>
-                    I am a sophomore student at <strong>Bilkent University</strong>, pursuing a degree in <strong>Information Systems and Technologies (CTIS)</strong>. My passion lies in <strong>backend and web development</strong>, where I enjoy creating projects and doing research in different areas of software development to expand my knowledge. I am also interested in data structures & algorithms to challenge myself and enhance my problem solving skills. Other than coursework, tutoring others is something I find incredibly rewarding, as it allows me to solidify my own understanding while also helping others grow. 
+                    I am a sophomore student at <strong>Bilkent University</strong>, pursuing a degree in <strong>Information Systems and Technologies (CTIS)</strong>. My passion lies in <strong>backend and web development</strong>, where I enjoy creating projects and doing research in different areas of software development to expand my knowledge. I am also interested in <strong>data structures & algorithms</strong> to challenge myself and enhance my problem solving skills. Other than coursework, <strong>tutoring others</strong> is something I find incredibly rewarding, as it allows me to solidify my own understanding while also helping others grow. 
                 </p>
                 <ul className='grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl'>
                     {infoList.map(({icon, iconDark, title, description}, index) => {
                         const isLast = index === infoList.length - 1;
                         const content = (
-                            <li key={index} className='border-[0.5px] border-gray-400 rounded-xl p-6 cursor-pointer hover-light'> 
+                            <li key={index} className='border-[0.5px] border-gray-400 rounded-xl p-6 cursor-pointer hover-light flex flex-col items-center sm:items-start'> 
                                 <Image src={icon} alt={title} className='w-7 mt-3'></Image>
                                 <h3 className='font-semibold text-gray-700 my-4'>{title}</h3>
-                                <p className='text-gray-600 text-sm'>{description}</p>
+                                <p className='text-gray-600 text-sm text-center sm:text-left'>{description}</p>
                             </li>
                         );
                         return isLast ? (

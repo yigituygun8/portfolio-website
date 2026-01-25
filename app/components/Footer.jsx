@@ -5,7 +5,7 @@ import { assets } from '@/assets/assets'
 const Footer = () => {
   return (
     <section id="footer" className='w-full px-[12%] py-10 font-jetbrains scroll-mt-28'>
-            <h2 className='text-center text-5xl mb-8'>./EOF</h2>
+            <h2 className='text-center text-4xl sm:text-5xl mb-8'>./EOF</h2>
             <div className='w-max flex items-center gap-2 mx-auto'>
                 <Image src={assets.mail_icon} alt="Mail Icon" className='w-6'/>
                 osmanuygun197@gmail.com

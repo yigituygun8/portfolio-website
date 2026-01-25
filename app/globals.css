@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+/* Enable smooth scrolling for anchor and programmatic scrolls */
+html { scroll-behavior: smooth; }
+
 @theme {
   --font-outfit: var(--font-outfit);
   --font-ovo: var(--font-ovo);

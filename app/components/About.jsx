@@ -9,8 +9,8 @@ const About = () => {
         <h2 className='text-center text-4xl sm:text-5xl'> ./About Me</h2>
 
         <div className='flex w-full flex-col md:flex-row items-center md:items-start justify-center gap-8 md:gap-12 my-12 md:my-20'>
-            <div className='w-48 sm:w-64 md:w-80 rounded-3xl overflow-hidden shrink-0'>
-                <Image src={assets.user_image} alt='Photo of Yiğit' width={320} height={320} className='w-full h-auto rounded-3xl object-cover' />
+            <div className='w-48 sm:w-64 md:w-72 rounded-3xl overflow-hidden shrink-0'>
+                <Image src={assets.user_image} alt='Photo of Yiğit' className='w-full h-auto rounded-3xl object-cover' />
             </div>
             <div className='flex-1 flex flex-col items-center md:items-start'>
                 <p className='mb-10 max-w-full text-center sm:text-left sm:max-w-4xl text-sm sm:text-base leading-relaxed'>

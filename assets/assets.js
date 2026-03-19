@@ -38,6 +38,8 @@ import flyway from './flyway.svg';
 import linkedin_white from './linkedin-white.svg';
 import maven from './maven.svg';
 import development from './development.svg';
+import linux from './linux.svg';
+import react from './react.svg';
 
 export const assets = {
     user_image,
@@ -58,6 +60,7 @@ export const assets = {
     maven,
     right_arrow_white,
     logo,
+    linux,
     logo_dark,
     mail_icon,
     mail_icon_dark,
@@ -79,7 +82,8 @@ export const assets = {
     right_arrow_bold_dark,
     programming_black,
     book,
-    development
+    development,
+    react,
 };
 
 export const workData = [
@@ -131,10 +135,12 @@ export const infoList = [
 export const toolsData = [
     {title: "Git", icon: assets.git},
     {title: "SQL", icon: assets.sql},
+    {title: "React", icon: assets.react},
     {title: "Node.js", icon: assets.nodejs},
     {title: "Next.js", icon: assets.nextjs},
     {title: "Flyway", icon: assets.flyway},
     {title: "Maven", icon: assets.maven},
+    {title: "Linux", icon: assets.linux},
     {title: "IntelliJ", icon: assets.intellij},
-    {title: "VSCode", icon: assets.vscode}
+    {title: "VSCode", icon: assets.vscode},
 ];

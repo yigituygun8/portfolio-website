@@ -15,10 +15,10 @@ const Projects = () => {
         <div className='grid grid-cols-(--gridTemplateColumns) gap-8 my-10'>
             {workData.map(({title, description, bgImage, link}, index) => (
                 <a href={link} target='_blank' rel="noopener noreferrer" key={index} style={{backgroundImage: `url(${bgImage})`}} className="aspect-square bg-cover bg-no-repeat bg-center rounded-lg relative cursor-pointer group"> {/* Group is for grouping everything in the div for hover effects */}
-                    <div className='bg-[#ADD6EF] w-11/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex items-center justify-between gap-4 duration-400 group-hover:bottom-7'>
+                    <div className='bg-[#ADD6EF] w-full rounded-md absolute bottom-0 py-3 px-5 flex items-center justify-between gap-4 duration-400 group-hover:bottom-7'>
                         <div>
-                            <h2 className='font-bold text-lg'>{title}</h2>
-                            <p className='text-sm text-gray-700'>{description}</p>
+                            <h2 className='font-bold text-sm md:text-[17px]'>{title}</h2>
+                            <p className='text-xs md:text-[13px] text-gray-700'>{description}</p>
                         </div>
                         <div className='border rounded-full border-black w-9 aspect-square flex items-center justify-center shadow-[1px_1px_0_#000] group-hover:bg-lightHover transition'>
                             <Image src={assets.send_icon} alt="send icon" className="w-4"/>

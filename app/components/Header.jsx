@@ -27,7 +27,7 @@ const Header = () => {
 
       <h1 className="text-3xl sm:text-5xl lg:text-[66px]">
         <TypeAnimation
-            sequence={["Sophomore CTIS Student at Bilkent University."]}
+            sequence={["Junior CTIS Student at Bilkent University."]}
             speed={50}
             cursor={false}            
             wrapper="span"
@@ -36,7 +36,7 @@ const Header = () => {
 
       <p className="max-w-2xl mx-auto mt-4 text-lg">
         I am a passionate and dedicated student at <strong>CTIS, Bilkent University</strong>, who is
-        interested in <strong>backend and web development</strong>, doing research and side projects, and who loves <strong>teaching</strong> others while continuously learning every day.
+        interested in <strong>full-stack development, software testing and AI</strong>, doing research and side projects, and who loves <strong>teaching</strong> others while continuously learning every day.
       </p>
 
         <div className="flex flex-col sm:flex-row items-center gap-4 mt-4">

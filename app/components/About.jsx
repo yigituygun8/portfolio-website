@@ -14,7 +14,10 @@ const About = () => {
             </div>
             <div className='flex-1 flex flex-col items-center md:items-start'>
                 <p className='mb-10 max-w-full text-center sm:text-left sm:max-w-4xl text-sm sm:text-base leading-relaxed'>
-                    I am a sophomore student at <strong>Bilkent University</strong>, pursuing a degree in <strong>Information Systems and Technologies (CTIS)</strong>. My passion lies in <strong>backend and web development</strong>, where I enjoy creating projects and doing research in different areas of software development to expand my knowledge. I am also interested in <strong>data structures & algorithms</strong> to challenge myself and enhance my problem solving skills. Other than coursework, <strong>tutoring others</strong> is something I find incredibly rewarding, as it allows me to solidify my own understanding while also helping others grow. 
+                    I am a third-year student at <strong>Bilkent University</strong>, pursuing a degree in <strong>Information Systems and Technologies (CTIS)</strong>. 
+                    My passion lies in <strong>full-stack development, software quality assurance and AI systems</strong>, where I enjoy creating projects and doing research in different areas of software development to expand my knowledge. 
+                    I am also interested in <strong>data structures & algorithms</strong> to challenge myself and enhance my problem solving skills. 
+                    Other than coursework, <strong>tutoring others</strong> is something I find incredibly rewarding, as it allows me to solidify my own understanding while also helping others grow. 
                 </p>
                 <ul className='grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl'>
                     {infoList.map(({icon, iconDark, title, description}, index) => {

@@ -40,6 +40,8 @@ import maven from './maven.svg';
 import development from './development.svg';
 import linux from './linux.svg';
 import react from './react.svg';
+import qt from './qt.svg';
+import playwright from './playwright.svg';
 
 export const assets = {
     user_image,
@@ -84,12 +86,20 @@ export const assets = {
     book,
     development,
     react,
+    qt,
+    playwright,
 };
 
 export const workData = [
     {
+        title: "Uygun Markets - Market Waste Reduction System",
+        description: "EJS & Express.js & MySQL & Docker",
+        bgImage: '/uygun-markets.png',
+        link: 'https://github.com/yigituygun8/ctis256-fullstack-project'
+    },
+    {
         title: 'AROS Loot Shop',
-        description: 'Java OOP & Swing GUI',
+        description: 'Java OOP, Collections & Swing',
         bgImage: '/aros.png',
         link: 'https://github.com/yigituygun8/aros-lootshop'
     },
@@ -127,7 +137,7 @@ export const serviceData = [
 ]
 
 export const infoList = [
-    { icon: assets.code_icon, iconDark: assets.code_icon_dark, title: 'Languages', description: 'Java | C | JavaScript | PL/SQL | Python' },
+    { icon: assets.code_icon, iconDark: assets.code_icon_dark, title: 'Languages', description: 'Java | C / C++ | JavaScript | PL/SQL | Python' },
     { icon: assets.edu_icon, iconDark: assets.edu_icon_dark, title: 'Education', description: 'BSc at CTIS, Bilkent University' },
     { icon: assets.project_icon, iconDark: assets.project_icon_dark, title: 'Projects', description: 'Available in GitHub Repos | Click To View' }
 ];
@@ -138,9 +148,11 @@ export const toolsData = [
     {title: "React", icon: assets.react},
     {title: "Node.js", icon: assets.nodejs},
     {title: "Next.js", icon: assets.nextjs},
+    {title: "Qt 6", icon: assets.qt},
     {title: "Flyway", icon: assets.flyway},
     {title: "Maven", icon: assets.maven},
     {title: "Linux", icon: assets.linux},
+    {title: "Playwright", icon: assets.playwright},
     {title: "IntelliJ", icon: assets.intellij},
     {title: "VSCode", icon: assets.vscode},
 ];

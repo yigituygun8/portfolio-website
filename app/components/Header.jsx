@@ -5,8 +5,10 @@ import { TypeAnimation } from "react-type-animation"; // For typing animation ef
 
 const Header = () => {
   return (
-    <section className="w-11/12 max-w-3xl text-center mx-auto h-screen flex flex-col justify-center items-center gap-4 font-ovo">
+    // h-screen yerine min-h-screen yapıldı. pt-28 ile navbarın arkasına kaçması kesin olarak engellendi.
+    <section className="w-11/12 max-w-3xl text-center mx-auto min-h-screen flex flex-col justify-center items-center gap-4 font-ovo pt-28 pb-12">
       <header>
+        {/* mt-32 ve md:mt-8 kaldırıldı. Esnek hizalama flex box'a bırakıldı. */}
         <div className="w-52 rounded-full overflow-hidden mx-auto">
           <Image
             src={assets.profile_img2}
@@ -17,7 +19,7 @@ const Header = () => {
         </div>
       </header>
 
-      <h2 className="flex justify-center align items-center gap-2 text-xl md:text-3xl mb-3 font-ovo mt-6">
+      <h2 className="flex justify-center items-center gap-2 text-xl md:text-3xl mb-3 font-ovo mt-6">
         <TypeAnimation
           sequence={["Hi, I'm Osman Yiğit Uygun!"]}
           speed={50}

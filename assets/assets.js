@@ -40,11 +40,15 @@ import maven from './maven.svg';
 import development from './development.svg';
 import linux from './linux.svg';
 import react from './react.svg';
-import qt from './qt.svg';
+import postman from './postman.svg';
 import playwright from './playwright.svg';
+import tailwindcss from './tailwindcss.svg';
+import docker from './docker.svg';
+import profile_img2 from './profile-img2.jpeg';
 
 export const assets = {
     user_image,
+    profile_img2,
     code_icon,
     code_icon_dark,
     edu_icon,
@@ -86,8 +90,10 @@ export const assets = {
     book,
     development,
     react,
-    qt,
     playwright,
+    postman,
+    tailwindcss,
+    docker,
 };
 
 export const workData = [
@@ -99,7 +105,7 @@ export const workData = [
     },
     {
         title: 'AROS Loot Shop',
-        description: 'Java OOP, Collections & Swing',
+        description: 'Java OOP, Swing GUI, MVC Architecture',
         bgImage: '/aros.png',
         link: 'https://github.com/yigituygun8/aros-lootshop'
     },
@@ -120,7 +126,7 @@ export const workData = [
 export const serviceData = [
     { icon: assets.programming_black, title: 'Programming Lessons', description: (
         <>
-            Tutoring university students in languages such as <strong>Java, C, Python</strong>. Helping students succeed in coursework and exam preparation across different universities.
+            Tutoring university students in <strong>Java, C, Python</strong>. Helping students succeed in coursework and exam preparation across different universities.
         </>
     ), link: '#contact' },
     { icon: assets.book, title: 'Middle & High School Tutoring', description: (
@@ -130,15 +136,15 @@ export const serviceData = [
     ), link: '#contact' },
     { icon: assets.development, title: 'Development ', description: (
         <>
-            End-to-end web development for small to medium projects.
-            From <strong>UI implementation to backend logic and database design</strong>, tailored to project needs.
+            End-to-end web development and testing for small to medium projects.
+            From <strong>UI implementation to backend logic, database design, and QA</strong>, tailored to project needs.
         </>
     ), link: 'https://github.com/yigituygun8?tab=repositories' },
 ]
 
 export const infoList = [
-    { icon: assets.code_icon, iconDark: assets.code_icon_dark, title: 'Languages', description: 'Java | C / C++ | JavaScript | PL/SQL | Python' },
-    { icon: assets.edu_icon, iconDark: assets.edu_icon_dark, title: 'Education', description: 'BSc at CTIS, Bilkent University' },
+    { icon: assets.code_icon, iconDark: assets.code_icon_dark, title: 'Languages', description: 'Java | C / C++ | JavaScript / TypeScript | Python' },
+    { icon: assets.edu_icon, iconDark: assets.edu_icon_dark, title: 'Education', description: 'BSc at CTIS, Bilkent University | CGPA: 3.93/4.00 | Full Scholarship' },
     { icon: assets.project_icon, iconDark: assets.project_icon_dark, title: 'Projects', description: 'Available in GitHub Repos | Click To View' }
 ];
 
@@ -146,13 +152,13 @@ export const toolsData = [
     {title: "Git", icon: assets.git},
     {title: "SQL", icon: assets.sql},
     {title: "React", icon: assets.react},
+    {title: "Tailwind CSS", icon: assets.tailwindcss},
     {title: "Node.js", icon: assets.nodejs},
     {title: "Next.js", icon: assets.nextjs},
-    {title: "Qt 6", icon: assets.qt},
     {title: "Flyway", icon: assets.flyway},
     {title: "Maven", icon: assets.maven},
     {title: "Linux", icon: assets.linux},
     {title: "Playwright", icon: assets.playwright},
-    {title: "IntelliJ", icon: assets.intellij},
-    {title: "VSCode", icon: assets.vscode},
+    {title: "Postman", icon: assets.postman},
+    {title: "Docker", icon: assets.docker},
 ];

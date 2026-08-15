@@ -9,8 +9,8 @@ const Services = () => {
         <h2 className='text-center text-4xl sm:text-5xl mb-8'> ./My Services</h2>
 
         <p className='text-center max-w-full mx-auto mt-5 mb-12'>
-            I&apos;ve been a <strong>private tutor</strong> for university and high school students for about 1.5 years, alongside my <strong>undergraduate teaching assistant experience</strong> at Bilkent University.
-            I also provide <strong>frontend, backend, and database development services</strong> for small to medium-scale projects.
+            I&apos;ve been a <strong>private tutor</strong> for university and high school students for about 2 years, alongside my <strong>undergraduate teaching assistant experience</strong> at Bilkent University.
+            I also provide <strong>frontend, backend, and testing/quality assurance services</strong> for small to medium-scale projects.
         </p>
         
         <div className='grid grid-cols-(--gridTemplateColumns) gap-6 my-10'>

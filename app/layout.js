@@ -15,8 +15,8 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata = {
   title: "Osman Yiğit Uygun",
-  description: "Osman Yiğit Uygun's personal portfolio website.",
-  keywords: ['Osman Yiğit Uygun', 'Yiğit Uygun', 'portfolio', 'student', 'candidate software developer', 'Bilkent University', 'web developer', 'backend developer'],
+  description: "Osman Yiğit Uygun — Aspiring SDET | QA Engineering Intern at Commencis | CTIS Student at Bilkent University",
+  keywords: ['Osman Yiğit Uygun', 'Yiğit Uygun', 'portfolio', 'student', 'QA Engineer', 'SDET', 'software testing', 'Commencis', 'quality assurance', 'test automation', 'Bilkent University', 'web developer', 'backend developer'],
   icons: {
     icon: "/icon.svg",
   },

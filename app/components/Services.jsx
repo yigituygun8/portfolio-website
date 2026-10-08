@@ -4,9 +4,9 @@ import { serviceData, assets } from "@/assets/assets.js";
 
 const Services = () => {
   return (
-    <section id="services" className='w-full px-[12%] py-10 font-jetbrains scroll-mt-28'>
+    <section id="services" className='w-full px-5 sm:px-[8%] md:px-[12%] py-10 font-jetbrains scroll-mt-28'>
         <h4 className='text-center mb-2 text-lg'>What I Offer</h4>
-        <h2 className='text-center text-4xl sm:text-5xl mb-8'> ./My Services</h2>
+        <h2 className='text-center text-3xl sm:text-4xl md:text-5xl mb-8'> ./My Services</h2>
 
         <p className='text-center max-w-full mx-auto mt-5 mb-12'>
             I&apos;ve been a <strong>private tutor</strong> for university and high school students for about 2 years, alongside my <strong>undergraduate teaching assistant experience</strong> at Bilkent University.

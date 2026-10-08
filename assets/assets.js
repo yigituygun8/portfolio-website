@@ -45,10 +45,12 @@ import playwright from './playwright.svg';
 import tailwindcss from './tailwindcss.svg';
 import docker from './docker.svg';
 import profile_img2 from './profile-img2.jpeg';
+import android from './android.svg';
 
 export const assets = {
     user_image,
     profile_img2,
+    android,
     code_icon,
     code_icon_dark,
     edu_icon,
@@ -156,9 +158,9 @@ export const toolsData = [
     {title: "Node.js", icon: assets.nodejs},
     {title: "Next.js", icon: assets.nextjs},
     {title: "Flyway", icon: assets.flyway},
-    {title: "Maven", icon: assets.maven},
     {title: "Linux", icon: assets.linux},
     {title: "Playwright", icon: assets.playwright},
     {title: "Postman", icon: assets.postman},
     {title: "Docker", icon: assets.docker},
+    {title: "Android Studio", icon: assets.android},
 ];

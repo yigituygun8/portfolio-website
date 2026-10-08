@@ -1,260 +1,392 @@
 'use client';
-import React, { useState } from 'react'
-import Image from 'next/image'
-import { assets, infoList, toolsData } from "@/assets/assets.js"; 
+import React, { useState } from 'react';
+import Image from 'next/image';
+import { assets, toolsData } from "@/assets/assets.js";
 
 const certifications = [
-    {
-        emoji: '🏅',
-        title: 'Amazon University Engagement Program 2025',
-        subtitle: 'SDE Track — Frontend, Backend, DevOps',
-        details: [
-            'Completed the Software Development Engineer (SDE) track covering end-to-end web development.',
-            'Topics: Frontend (React, HTML/CSS), Backend (APIs, Microservices), DevOps (CI/CD, Cloud).',
-            'Hands-on projects and collaborative workshops with Amazon engineers.'
-        ],
-        color: 'border-orange-300',
-        hoverColor: 'hover:border-orange-400',
-        bgAccent: 'bg-orange-50',
-    },
-    {
-        emoji: '🏅',
-        title: 'HackerRank Java Certificate',
-        subtitle: 'Problem Solving & OOP',
-        details: [
-            'Certified proficiency in Java programming and object-oriented design.',
-            'Covered data structures, algorithms, and problem-solving techniques.',
-            'Demonstrated skills in Java collections, generics, and design patterns.'
-        ],
-        color: 'border-green-300',
-        hoverColor: 'hover:border-green-400',
-        bgAccent: 'bg-green-50',
-    },
-    {
-        emoji: '🏅',
-        title: 'Google Project Management',
-        subtitle: 'Foundations of PM & Agile — Coursera',
-        details: [
-            'Google Career Certificates program covering project management fundamentals.',
-            'Agile methodologies: Scrum, Kanban, Sprint planning and retrospectives.',
-            'Project lifecycle, stakeholder management, risk assessment, and documentation.'
-        ],
-        color: 'border-blue-300',
-        hoverColor: 'hover:border-blue-400',
-        bgAccent: 'bg-blue-50',
-    },
-    {
-        emoji: '🌐',
-        title: 'Network Technician Career Path',
-        subtitle: 'Cisco — Networking Fundamentals',
-        details: [
-            'Different types of networks and how they work. How devices send and receive data, types of network cabling, and how IP addresses find information on the Internet.',
-            'Physical, data link and network layers, and how they work together to provide end-to-end connectivity.',
-            'Benefits of cloud and virtualization. Troubleshooting knowledge to support endpoints, networks, and users as a member of a help desk team.'
-        ],
-        color: 'border-purple-300',
-        hoverColor: 'hover:border-purple-400',
-        bgAccent: 'bg-purple-50',
-    },
-    {
-        emoji: '🎓',
-        title: 'IELTS Academic — Band 7.0',
-        subtitle: 'British Council — English Proficiency',
-        details: [
-            'Overall band score of 7.0 (Good User) in the IELTS Academic examination.',
-            'Demonstrated proficiency in academic English across Listening, Reading, Writing, and Speaking modules.',
-            'Qualified for international study programs and professional English communication.'
-        ],
-        color: 'border-red-300',
-        hoverColor: 'hover:border-red-400',
-        bgAccent: 'bg-red-50',
-    }
+  {
+    emoji: '🏅',
+    title: 'Amazon University Engagement Program 2025',
+    subtitle: 'SDE Track — Frontend, Backend, DevOps',
+    details: [
+      'Completed the Software Development Engineer (SDE) track covering end-to-end web development.',
+      'Topics: Frontend (React, HTML/CSS), Backend (APIs, Microservices), DevOps (CI/CD, Cloud).',
+      'Hands-on projects and collaborative workshops with Amazon engineers.'
+    ],
+    color: 'border-orange-300',
+    hoverColor: 'hover:border-orange-400',
+    bgAccent: 'bg-orange-50',
+  },
+  {
+    emoji: '🏅',
+    title: 'HackerRank Java Certificate',
+    subtitle: 'Problem Solving & OOP',
+    details: [
+      'Certified proficiency in Java programming and object-oriented design.',
+      'Covered data structures, algorithms, and problem-solving techniques.',
+      'Demonstrated skills in Java collections, generics, and design patterns.'
+    ],
+    color: 'border-green-300',
+    hoverColor: 'hover:border-green-400',
+    bgAccent: 'bg-green-50',
+  },
+  {
+    emoji: '🏅',
+    title: 'Google Project Management',
+    subtitle: 'Foundations of PM & Agile — Coursera',
+    details: [
+      'Google Career Certificates program covering project management fundamentals.',
+      'Agile methodologies: Scrum, Kanban, Sprint planning and retrospectives.',
+      'Project lifecycle, stakeholder management, risk assessment, and documentation.'
+    ],
+    color: 'border-blue-300',
+    hoverColor: 'hover:border-blue-400',
+    bgAccent: 'bg-blue-50',
+  },
+  {
+    emoji: '🌐',
+    title: 'Network Technician Career Path',
+    subtitle: 'Cisco — Networking Fundamentals',
+    details: [
+      'Different types of networks and how they work. How devices send and receive data, types of network cabling, and how IP addresses find information on the Internet.',
+      'Physical, data link and network layers, and how they work together to provide end-to-end connectivity.',
+      'Benefits of cloud and virtualization. Troubleshooting knowledge to support endpoints, networks, and users as a member of a help desk team.'
+    ],
+    color: 'border-purple-300',
+    hoverColor: 'hover:border-purple-400',
+    bgAccent: 'bg-purple-50',
+  },
+  {
+    emoji: '🎓',
+    title: 'IELTS Academic — Band 7.0',
+    subtitle: 'British Council — English Proficiency',
+    details: [
+      'Overall band score of 7.0 (Good User) in the IELTS Academic examination.',
+      'Demonstrated proficiency in academic English across Listening, Reading, Writing, and Speaking modules.',
+      'Qualified for international study programs and professional English communication.'
+    ],
+    color: 'border-red-300',
+    hoverColor: 'hover:border-red-400',
+    bgAccent: 'bg-red-50',
+  }
 ];
 
-const skillTag = ({ children }) => (
-     <span className="px-2.5 py-1 bg-slate-100/80 text-slate-700 font-medium text-xs rounded-lg border border-slate-200/80 transition-transform duration-200 hover:scale-115">
-        {children}
-    </span>
-) // For hover effect 
+const nodes = [
+  {
+    id: 'academic',
+    icon: '🎓',
+    title: 'Academic Journey',
+    tagline: 'Bilkent CTIS ➔ FH Oberösterreich (Erasmus+)',
+    desc: 'Third-year CTIS student at Bilkent (CGPA 3.93/4.00, Full Scholarship). Currently on Erasmus+ exchange in Austria.',
+    badges: ['Bilkent (3.93 CGPA)', 'FH Oberösterreich 🇦🇹', 'Class of 2028'],
+    accent: 'border-blue-400 hover:border-blue-600',
+    activeBg: 'bg-blue-50/60',
+    lineColor: '#2563eb', // blue-600
+    yCoord: 45,
+  },
+  {
+    id: 'experience',
+    icon: '💼',
+    title: 'Industry Experience',
+    tagline: 'Akbank Mobile & Commencis QA',
+    desc: 'React Native Intern at Akbank (Payment Systems) & QA Intern at Commencis on OTP Bank European digital banking.',
+    badges: ['Akbank (React Native)', 'Commencis (QA/SDET)', 'OTP Bank Project'],
+    accent: 'border-indigo-400 hover:border-indigo-600',
+    activeBg: 'bg-indigo-50/60',
+    lineColor: '#4f46e5', // indigo-600
+    yCoord: 148,
+  },
+  {
+    id: 'focus',
+    icon: '⚡',
+    title: 'Core Engineering Focus',
+    tagline: 'Full-Stack · Mobile · QA Automation',
+    desc: 'Building responsive full-stack applications with Node.js/React, mobile apps with React Native & Kotlin, plus Playwright test automation.',
+    badges: ['React Native & Kotlin', 'Node.js & Express', 'SDET / Playwright'],
+    accent: 'border-emerald-400 hover:border-emerald-600',
+    activeBg: 'bg-emerald-50/60',
+    lineColor: '#059669', // emerald-600
+    yCoord: 252,
+  },
+  {
+    id: 'mentorship',
+    icon: '🤝',
+    title: 'Teaching & Mentorship',
+    tagline: 'Bilkent TA & 1-on-1 Tutoring',
+    desc: 'Mentored 50+ students in C and Data Structures labs at Bilkent. Also provide private tutoring for university CS and high school exam prep.',
+    badges: ['Bilkent TA (50+ students)', 'C & DSA Labs', 'Private Tutoring (Java/C/YKS)'],
+    accent: 'border-amber-400 hover:border-amber-600',
+    activeBg: 'bg-amber-50/60',
+    lineColor: '#d97706', // amber-600
+    yCoord: 355,
+  },
+];
 
 const About = () => {
-    const [expandedCert, setExpandedCert] = useState(null);
-
-    const toggleCert = (index) => {
-        setExpandedCert(expandedCert === index ? null : index);
-    };
+  const [currentCert, setCurrentCert] = useState(0);
+  const [showDetails, setShowDetails] = useState(true);
+  const [activeNode, setActiveNode] = useState(null);
 
   return (
-    <section id="about" className='w-full px-6 sm:px-[8%] md:px-[12%] py-10 font-jetbrains scroll-mt-24'>
-        <h4 className='text-center mb-2 text-lg'>Introduction</h4>
-        <h2 className='text-center text-4xl sm:text-5xl'> ./About Me</h2>
+    <section id="about" className="w-full px-6 sm:px-[8%] md:px-[10%] py-12 font-jetbrains scroll-mt-24">
+      <h4 className="text-center mb-2 text-lg text-gray-600">Introduction</h4>
+      <h2 className="text-center text-4xl sm:text-5xl mb-4">./About Me</h2>
+      <p className="text-center text-sm sm:text-base text-gray-500 max-w-2xl mx-auto mb-12">
+        An interactive concept map of my academic background, industry internships, technical focus, and teaching journey.
+      </p>
 
-        <div className='flex w-full flex-col md:flex-row items-center md:items-start justify-center gap-8 md:gap-12 my-12 md:my-20'>
-            <div className='w-48 sm:w-64 md:w-72 rounded-3xl overflow-hidden shrink-0'>
-                <Image src={assets.user_image} alt='Photo of Yiğit' className='w-full h-auto rounded-3xl object-cover' />
-            </div>
-            <div className='flex-1 flex flex-col items-center md:items-start w-full '>
-                <p className='mb-10 w-full text-center sm:text-left text-sm sm:text-base leading-relaxed'>
-                    I am a third-year student at <strong>Bilkent University</strong>, pursuing a degree in <strong>Information Systems and Technologies (CTIS)</strong> with a CGPA of <strong>3.93/4.00</strong> (full scholarship).
-                    Currently a <strong>QA Engineering Intern at Commencis</strong> on a European digital banking project, I am working toward an <strong>SDET (Software Development Engineer in Test)</strong> profile - combining hands-on <strong>QA</strong> exposure with <strong>full-stack development</strong> skills.
-                    I also enjoy <strong>tutoring people</strong> and find it incredibly rewarding.
+      {/* ===================== CONCEPT MIND-MAP SECTION ===================== */}
+      <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center lg:items-center gap-6 lg:gap-0 my-6">
+        
+        {/* LEFT NODE: Central Profile Entity */}
+        <div className="w-full sm:w-auto lg:w-72 shrink-0 self-center flex flex-col items-center p-5 bg-white border-2 border-gray-200/90 rounded-3xl shadow-sm relative group hover:border-gray-400 transition-all duration-300">
+          <div className="w-44 h-44 sm:w-48 sm:h-48 rounded-2xl overflow-hidden mb-3 shadow-sm relative border border-gray-100">
+            <Image
+              src={assets.user_image}
+              alt="Osman Yiğit Uygun"
+              className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+              style={{ objectPosition: "center 72%" }}
+              priority
+            />
+          </div>
+
+          <div className="text-center">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-blue-50 text-blue-700 border border-blue-200 mb-2">
+              <span className="w-2 h-2 rounded-full bg-blue-600 animate-pulse"></span>
+              Central Entity
+            </span>
+            <h3 className="text-lg font-bold text-gray-900">Osman Yiğit Uygun</h3>
+            <p className="text-xs text-gray-500 mt-1">Bilkent University &amp; FH OÖ</p>
+            <p className="text-xs text-gray-400 mt-0.5">Software Engineer</p>
+          </div>
+
+          {/* Connected point indicator on desktop right edge */}
+          <div className="hidden lg:flex absolute -right-3 top-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-white border-2 border-gray-400 items-center justify-center shadow-xs z-10">
+            <div className="w-2 h-2 rounded-full bg-blue-600"></div>
+          </div>
+        </div>
+
+        {/* MIDDLE: Animated SVG Connector Curves (Desktop Only) */}
+        <div className="hidden lg:block w-20 xl:w-28 shrink-0 relative self-stretch">
+          <svg
+            className="w-full h-full overflow-visible"
+            viewBox="0 0 100 400"
+            preserveAspectRatio="none"
+            fill="none"
+          >
+            {nodes.map((node, index) => {
+              const isHovered = activeNode === index;
+              return (
+                <g key={node.id}>
+                  {/* Outer glow line on hover */}
+                  {isHovered && (
+                    <path
+                      d={`M 0 200 C 50 200, 50 ${node.yCoord}, 100 ${node.yCoord}`}
+                      stroke={node.lineColor}
+                      strokeWidth="6"
+                      strokeOpacity="0.25"
+                      strokeLinecap="round"
+                    />
+                  )}
+                  {/* Main connecting path */}
+                  <path
+                    d={`M 0 200 C 50 200, 50 ${node.yCoord}, 100 ${node.yCoord}`}
+                    stroke={isHovered ? node.lineColor : '#cbd5e1'}
+                    strokeWidth={isHovered ? "2.5" : "1.75"}
+                    strokeDasharray={isHovered ? "none" : "4 3"}
+                    strokeLinecap="round"
+                    className="transition-all duration-300"
+                  />
+                  {/* End node anchor dot */}
+                  <circle
+                    cx="100"
+                    cy={node.yCoord}
+                    r={isHovered ? "4" : "3"}
+                    fill={isHovered ? node.lineColor : "#94a3b8"}
+                    className="transition-all duration-300"
+                  />
+                </g>
+              );
+            })}
+          </svg>
+        </div>
+
+        {/* RIGHT BRANCHES: 4 Concept Node Cards */}
+        <div className="flex-1 w-full flex flex-col justify-between gap-3.5">
+          {nodes.map((node, index) => {
+            const isHovered = activeNode === index;
+            return (
+              <div
+                key={node.id}
+                onMouseEnter={() => setActiveNode(index)}
+                onMouseLeave={() => setActiveNode(null)}
+                className={`relative p-4 sm:p-4.5 rounded-2xl border-2 bg-white transition-all duration-300 shadow-xs cursor-default
+                  ${isHovered ? `${node.accent} ${node.activeBg} shadow-md translate-x-1` : 'border-gray-200/90 hover:border-gray-300'}
+                `}
+              >
+                {/* Mobile left indicator connector */}
+                <div className="lg:hidden absolute -left-2 top-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-white border-2 border-gray-300 flex items-center justify-center">
+                  <div className="w-1.5 h-1.5 rounded-full bg-blue-500"></div>
+                </div>
+
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1.5 mb-1.5">
+                  <div className="flex items-center gap-2">
+                    <span className="text-xl">{node.icon}</span>
+                    <h3 className="font-bold text-gray-900 text-base">{node.title}</h3>
+                  </div>
+                  <span className="text-xs font-semibold text-gray-500 sm:text-right">
+                    {node.tagline}
+                  </span>
+                </div>
+
+                <p className="text-xs sm:text-sm text-gray-600 leading-relaxed mb-3">
+                  {node.desc}
                 </p>
 
-                {/* Main Content Grid: Left (Info + Tools) vs Right (Certifications) */}
-                <div className='w-[105%] grid grid-cols-1 xl:grid-cols-5 gap-8 items-start'>
-                    
-                    {/* Left Column (3 cols on xl): Info Cards + Tools & Frameworks */}
-                    <div className='xl:col-span-3 flex flex-col gap-6 w-full'>
-                        {/* 3 Info Cards: Unified Color Harmony & Spacious Padding */}
-                        <div className='grid grid-cols-1 sm:grid-cols-3 gap-5 w-full'>
-                            
-                            {/* Card 1: Languages */}
-                            <div className='border border-gray-200/90 rounded-2xl p-5 sm:p-6 bg-white hover-light flex flex-col justify-between h-full shadow-xs'> 
-                                <div>
-                                    <div className='flex items-center gap-2.5 mb-4'>
-                                        <Image src={assets.code_icon} alt="Languages" className='w-6 h-6'></Image>
-                                        <h3 className='font-bold text-gray-800 text-base'>Languages</h3>
-                                    </div>
-                                    <div className='flex flex-wrap gap-2 mt-4'>
-                                        {skillTag({ children: 'Java' })}
-                                        {skillTag({ children: 'JavaScript' })}
-                                        {skillTag({ children: 'TypeScript' })}
-                                        {skillTag({ children: 'Python' })}
-                                        {skillTag({ children: 'C / C++' })}
-                                    </div>
-                                </div>
-                            </div>
-
-                            {/* Card 2: Education */}
-                            <div className='border border-gray-200/90 rounded-2xl p-5 sm:p-6 bg-white hover-light flex flex-col justify-between h-full shadow-xs'> 
-                                <div>
-                                    <div className='flex items-center gap-2.5 mb-4'>
-                                        <Image src={assets.edu_icon} alt="Education" className='w-6 h-6'></Image>
-                                        <h3 className='font-bold text-gray-800 text-base'>Education</h3>
-                                    </div>
-                                    <p className='text-sm font-semibold text-gray-800 mt-4'>BSc in CTIS</p>
-                                    <p className='text-xs text-gray-500 mt-0.5'>Bilkent University</p>
-                                    
-                                    <div className='flex flex-col gap-4 mt-5'>
-                                        <span className='inline-flex items-center px-2.5 py-1 bg-slate-100/80 text-slate-700 font-semibold text-xs rounded-lg border border-slate-200/80 w-fit hover:scale-115 transition-transform duration-200'>
-                                            ⭐ CGPA 3.93 / 4.00
-                                        </span>
-                                        <span className='inline-flex items-center px-2.5 py-1 bg-slate-100/80 text-slate-700 font-medium text-xs rounded-lg border border-slate-200/80 w-fit hover:scale-115 transition-transform duration-200'>
-                                            🎓 Full Scholarship
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            {/* Card 3: Projects */}
-                            <a href="https://github.com/yigituygun8" target="_blank" rel="noopener noreferrer" className='group block h-full'>
-                                <div className='border border-gray-200/90 rounded-2xl p-5 sm:p-6 bg-white hover-light flex flex-col justify-between h-full group-hover:border-slate-400 transition-colors shadow-xs'> 
-                                    <div>
-                                        <div className='flex items-center gap-2.5 mb-4'>
-                                            <Image src={assets.project_icon} alt="Projects" className='w-6 h-6'></Image>
-                                            <h3 className='font-bold text-gray-800 text-base'>Projects</h3>
-                                        </div>
-                                        <p className='text-xs sm:text-sm text-gray-600 mt-4 leading-relaxed'>
-                                            Available in GitHub Repositories
-                                        </p>
-                                    </div>
-                                    <div className='mt-5 pt-3 border-t border-gray-100 flex items-center justify-between text-xs text-slate-700 font-semibold group-hover:text-blue-700'>
-                                        <span>Click to View</span>
-                                        <span className='group-hover:translate-x-1 transition-transform'>→</span>
-                                    </div>
-                                </div>
-                            </a>
-
-                        </div>
-
-                        {/* Tools & Frameworks (Placed in Left Column) */}
-                        <div className='w-full border border-gray-200 rounded-xl p-5 bg-gray-50/50 mt-2'>
-                            <h4 className='text-gray-700 font-semibold mb-4 flex items-center gap-2'>
-                                <span className='text-lg'>🛠️</span> Tools & Frameworks
-                            </h4>
-                            <ul className='flex items-center flex-wrap gap-3 sm:gap-4'>
-                                 {toolsData.map(({title, icon}, index) => {
-                                    return (
-                                        <li key={index} 
-                                            className='group relative flex items-center justify-center
-                                                        w-12 h-12 sm:w-14 sm:h-14
-                                                        border border-gray-300 rounded-lg bg-white
-                                                        hover:-translate-y-1 hover:scale-105 hover:border-gray-500 hover:shadow-md
-                                                        duration-300 cursor-pointer shadow-xs'>
-                                            <Image src={icon} alt={title} className='w-7 h-7 object-contain sm:w-8 sm:h-8'></Image>
-                                            
-                                            {/* Custom Tooltip */}
-                                            <span className='absolute -top-10 left-1/2 -translate-x-1/2 px-2.5 py-1 bg-gray-900 text-white text-xs font-medium rounded-md shadow-lg opacity-0 group-hover:opacity-100 group-hover:-top-11 transition-all duration-200 pointer-events-none whitespace-nowrap z-30'>
-                                                {title}
-                                                {/* Tooltip Arrow */}
-                                                <span className='absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-gray-900 rotate-45'></span>
-                                            </span>
-                                        </li>
-                                    );
-                                })}
-                            </ul>
-                        </div>
-                    </div>
-
-                    {/* Right Column (2 cols on xl): Certifications */}
-                    <div className='xl:col-span-2 w-100'>
-                        <h4 className='text-gray-700 font-semibold mb-4 flex items-center gap-2'>
-                            <span className='text-lg'>📜</span> Certifications
-                        </h4>
-                        <ul className='flex flex-col gap-3.5'>
-                            {certifications.map((cert, index) => (
-                                <li 
-                                    key={index} 
-                                    onClick={() => toggleCert(index)}
-                                    className={`
-                                        cursor-pointer rounded-xl border-[1.5px] transition-all duration-300 overflow-hidden
-                                        ${cert.color} ${cert.hoverColor}
-                                        ${expandedCert === index 
-                                            ? `${cert.bgAccent} shadow-md scale-[1.01]` 
-                                            : 'bg-white hover:shadow-sm hover:-translate-y-0.5'
-                                        }
-                                    `}
-                                >
-                                    {/* Card Header - always visible */}
-                                    <div className='flex items-center gap-3 p-4'>
-                                        <span className='text-2xl shrink-0'>{cert.emoji}</span>
-                                        <div className='flex-1 min-w-0'>
-                                            <p className='font-semibold text-gray-800 text-sm leading-tight'>{cert.title}</p>
-                                            <p className='text-gray-500 text-xs mt-0.5'>{cert.subtitle}</p>
-                                        </div>
-                                        <span className={`text-gray-400 transition-transform duration-300 text-lg shrink-0 ${expandedCert === index ? 'rotate-180' : ''}`}>
-                                            ▾
-                                        </span>
-                                    </div>
-
-                                    {/* Expandable Details */}
-                                    <div 
-                                        className={`transition-all duration-300 ease-in-out overflow-hidden ${
-                                            expandedCert === index ? 'max-h-60 opacity-100' : 'max-h-0 opacity-0'
-                                        }`}
-                                    >
-                                        <div className='px-4 pb-4 pt-1 border-t border-gray-200/60'>
-                                            <ul className='space-y-2 mt-2'>
-                                                {cert.details.map((detail, i) => (
-                                                    <li key={i} className='flex items-start gap-2 text-xs text-gray-600 leading-relaxed'>
-                                                        <span className='text-gray-400 mt-0.5 shrink-0'>▸</span>
-                                                        {detail}
-                                                    </li>
-                                                ))}
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-
+                {/* Micro Badges */}
+                <div className="flex flex-wrap gap-1.5">
+                  {node.badges.map((badge, bIdx) => (
+                    <span
+                      key={bIdx}
+                      className="px-2.5 py-0.5 bg-white/90 text-gray-700 text-[11px] font-medium rounded-md border border-gray-200 shadow-2xs"
+                    >
+                      {badge}
+                    </span>
+                  ))}
                 </div>
-            </div>
+              </div>
+            );
+          })}
         </div>
-        
-    </section>
-  )
-}
 
-export default About
+      </div>
+
+      {/* ===================== BOTTOM SECTION: TOOLS & CERTIFICATIONS ===================== */}
+      <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 mt-14 items-stretch">
+        
+        {/* LEFT COLUMN: Tools & Frameworks */}
+        <div className="w-full border border-gray-200 rounded-2xl p-6 bg-gray-50/50 shadow-xs flex flex-col justify-between">
+          <div>
+            <div className="flex items-center justify-between mb-5">
+              <h4 className="text-gray-800 font-bold text-base flex items-center gap-2">
+                <span className="text-xl">🛠️</span> Tools &amp; Frameworks
+              </h4>
+              <span className="text-xs text-gray-400">Core Toolkit</span>
+            </div>
+
+            <ul className="grid grid-cols-4 sm:grid-cols-6 gap-3">
+              {toolsData.map(({ title, icon }, index) => (
+                <li
+                  key={index}
+                  className="group relative flex items-center justify-center h-14 rounded-xl border border-gray-200 bg-white hover:-translate-y-1 hover:border-gray-500 hover:shadow-md transition-all duration-300 cursor-pointer shadow-xs"
+                >
+                  <Image src={icon} alt={title} className="w-7 h-7 object-contain" />
+                  
+                  {/* Tooltip */}
+                  <span className="absolute -top-10 left-1/2 -translate-x-1/2 px-2.5 py-1 bg-gray-900 text-white text-[11px] font-medium rounded-md shadow-lg opacity-0 group-hover:opacity-100 group-hover:-top-11 transition-all duration-200 pointer-events-none whitespace-nowrap z-30">
+                    {title}
+                    <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-gray-900 rotate-45"></span>
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="pt-4 mt-4 border-t border-gray-200/60 flex items-center justify-between text-xs text-gray-400">
+            <span>Modern Web, Mobile &amp; QA Stack</span>
+            <span className="text-gray-500 font-medium">{toolsData.length} Technologies</span>
+          </div>
+        </div>
+
+        {/* RIGHT COLUMN: Certifications (Interactive Carousel Slider) */}
+        <div className="w-full border border-gray-200 rounded-2xl p-6 bg-white shadow-xs flex flex-col justify-between">
+          <div>
+            {/* Carousel Header with Controls */}
+            <div className="flex items-center justify-between mb-4">
+              <h4 className="text-gray-800 font-bold text-base flex items-center gap-2">
+                <span className="text-xl">📜</span> Certifications &amp; Credentials
+              </h4>
+              
+              <div className="flex items-center gap-2">
+                <button
+                  type="button"
+                  onClick={() => setCurrentCert((prev) => (prev - 1 + certifications.length) % certifications.length)}
+                  className="w-7 h-7 rounded-full border border-gray-300 hover:border-gray-600 hover:bg-gray-100 flex items-center justify-center text-xs text-gray-700 transition-colors cursor-pointer"
+                  aria-label="Previous certification"
+                >
+                  ←
+                </button>
+                <span className="text-xs font-semibold text-gray-600 px-1">
+                  {currentCert + 1} / {certifications.length}
+                </span>
+                <button
+                  type="button"
+                  onClick={() => setCurrentCert((prev) => (prev + 1) % certifications.length)}
+                  className="w-7 h-7 rounded-full border border-gray-300 hover:border-gray-600 hover:bg-gray-100 flex items-center justify-center text-xs text-gray-700 transition-colors cursor-pointer"
+                  aria-label="Next certification"
+                >
+                  →
+                </button>
+              </div>
+            </div>
+
+            {/* Current Active Certificate Card */}
+            {(() => {
+              const cert = certifications[currentCert];
+              return (
+                <div
+                  onClick={() => setShowDetails(!showDetails)}
+                  className={`rounded-xl border-[1.5px] ${cert.color} ${cert.bgAccent} p-4 transition-all duration-300 cursor-pointer shadow-xs hover:shadow-sm`}
+                >
+                  <div className="flex items-start justify-between gap-3">
+                    <div className="flex items-center gap-3">
+                      <span className="text-2xl shrink-0">{cert.emoji}</span>
+                      <div>
+                        <p className="font-bold text-gray-900 text-sm leading-tight">{cert.title}</p>
+                        <p className="text-gray-500 text-xs mt-0.5">{cert.subtitle}</p>
+                      </div>
+                    </div>
+                    <span className="text-xs text-gray-400 font-mono mt-1 shrink-0">
+                      {showDetails ? '▲ Hide' : '▼ Details'}
+                    </span>
+                  </div>
+
+                  {/* Expandable Details Content */}
+                  {showDetails && (
+                    <div className="mt-3 pt-3 border-t border-gray-200/70 text-xs text-gray-600 space-y-1.5 animate-fadeIn">
+                      {cert.details.map((detail, idx) => (
+                        <p key={idx} className="flex items-start gap-1.5 leading-relaxed">
+                          <span className="text-gray-400 mt-0.5 shrink-0">▸</span>
+                          <span>{detail}</span>
+                        </p>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              );
+            })()}
+          </div>
+
+          {/* Dots Indicator at the bottom */}
+          <div className="flex items-center justify-center gap-2 pt-4 mt-4 border-t border-gray-100">
+            {certifications.map((_, idx) => (
+              <button
+                key={idx}
+                type="button"
+                onClick={() => setCurrentCert(idx)}
+                className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
+                  currentCert === idx ? 'w-6 bg-blue-600' : 'w-2 bg-gray-300 hover:bg-gray-400'
+                }`}
+                aria-label={`Go to certification ${idx + 1}`}
+              />
+            ))}
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+  );
+};
+
+export default About;

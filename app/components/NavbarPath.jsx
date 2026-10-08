@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 const SECTION_PATHS = {
   top: "",
   about: "about",
+  education: "education",
   experience: "experience",
   projects: "projects",
   services: "services",

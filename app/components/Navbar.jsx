@@ -56,6 +56,7 @@ const Navbar = () => {
                 ${isScrolled ? '' : 'bg-white/50 shadow-sm'}`}>
                 <li><a href="#top" className="transition-all duration-200 hover:text-blue-800 hover:underline">Home</a></li>
                 <li><a href="#about" className="transition-all duration-200 hover:text-blue-800 hover:underline">About Me</a></li>
+                <li><a href="#education" className="transition-all duration-200 hover:text-blue-800 hover:underline">Education</a></li>
                 <li><a href="#experience" className="transition-all duration-200 hover:text-blue-800 hover:underline">Experience</a></li>
                 <li><a href="#projects" className="transition-all duration-200 hover:text-blue-800 hover:underline">Projects</a></li>
                 <li><a href="#services" className="transition-all duration-200 hover:text-blue-800 hover:underline">Services</a></li>
@@ -82,6 +83,7 @@ const Navbar = () => {
                 </div>
                 <li><a href="#top" className="transition-colors duration-200 hover:text-blue-500 font-bold">Home</a></li>
                 <li><a href="#about" className="transition-colors duration-200 hover:text-blue-500 font-bold">About Me</a></li>
+                <li><a href="#education" className="transition-colors duration-200 hover:text-blue-500 font-bold">Education</a></li>
                 <li><a href="#experience" className="transition-colors duration-200 hover:text-blue-500 font-bold">Experience</a></li>
                 <li><a href="#projects" className="transition-colors duration-200 hover:text-blue-500 font-bold">Projects</a></li>
                 <li><a href="#services" className="transition-colors duration-200 hover:text-blue-500 font-bold">Services</a></li>

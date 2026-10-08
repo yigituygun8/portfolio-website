@@ -3,6 +3,7 @@
 import Navbar from "./components/Navbar";
 import Header from "./components/Header";
 import About from "./components/About";
+import Education from "./components/Education";
 import Experience from "./components/Experience";
 import Services from "./components/Services";
 import Projects from "./components/Projects";
@@ -15,6 +16,7 @@ export default function Home() {
       <Navbar/>
       <Header/>
       <About/>
+      <Education/>
       <Experience/>
       <Projects/>
       <Services/>

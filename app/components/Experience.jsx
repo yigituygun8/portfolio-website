@@ -3,21 +3,45 @@ import React from "react";
 const Experience = () => {
   const experiences = [
     {
-      company: "Commencis, Hybrid",
-      role: "QA Engineering Intern",
-      date: "Jul 2026 – Present",
-      current: true,
+      company: "Akbank, Hybrid",
+      role: "React Native Intern",
+      date: "Sep 2026",
+      current: false,
       bullets: [
         <>
-          Supporting QA efforts on a{" "}
+          Joined the <strong>Payment Systems Technologies team</strong> within Akbank Mobile,
+          working alongside a React Native mentor to gain exposure to the team&apos;s{" "}
+          <strong>mobile development workflow</strong>.
+        </>,
+        <>
+          Participated in <strong>sprint planning sessions, daily stand-ups, and team meetings</strong>,
+          gaining insight into how the team plans and prioritizes work using{" "}
+          <strong>Azure DevOps</strong>.
+        </>,
+        <>
+          Reviewed code alongside mentor to understand <strong>code review standards and practices</strong>,
+          and strengthened <strong>TypeScript</strong> foundations through independent{" "}
+          <strong>React Native demo projects</strong>.
+        </>,
+      ],
+    },
+    {
+      company: "Commencis, Hybrid",
+      role: "QA Engineering Intern",
+      date: "Jul 2026 – Aug 2026",
+      current: false,
+      bullets: [
+        <>
+          Supported QA efforts on a{" "}
           <strong>European digital banking project (OTP Bank, Hungary)</strong>, gaining hands-on
           exposure to <strong>API testing (Postman)</strong> and{" "}
           <strong>network traffic inspection (Charles Proxy)</strong>, alongside
           defect tracking via <strong>JIRA/XRAY</strong>.
         </>,
         <>
-          Completing structured onboarding training across QA domains including{" "}
-          <strong>accessibility & exploratory dark mode testing</strong>, building experience with <strong>non-functional testing standards</strong>.
+          Completed structured onboarding training across QA domains including{" "}
+          <strong>accessibility & exploratory dark mode testing</strong>, building experience with{" "}
+          <strong>non-functional testing standards</strong>.
         </>,
       ],
     },
@@ -34,7 +58,7 @@ const Experience = () => {
           and <strong>non-functional testing</strong> (performance, security).
         </>,
         <>
-          Gaining hands-on exposure to{" "}
+          Gained hands-on exposure to{" "}
           <strong>test automation frameworks</strong> and{" "}
           <strong>CI/CD integration</strong> in collaborative sessions.
         </>,
@@ -75,12 +99,12 @@ const Experience = () => {
   return (
     <section
       id="experience"
-      className="w-full px-[12%] py-10 scroll-mt-28 font-jetbrains"
+      className="w-full px-5 sm:px-[8%] md:px-[12%] py-10 scroll-mt-28 font-jetbrains"
     >
       <h4 className="text-center mb-2 text-lg text-gray-600">
         What I&apos;ve Done
       </h4>
-      <h2 className="text-center text-5xl mb-12">./Experience</h2>
+      <h2 className="text-center text-3xl sm:text-4xl md:text-5xl mb-12">./Experience</h2>
 
       <div className="relative max-w-5xl mx-auto">
         {/* Vertical Line */}

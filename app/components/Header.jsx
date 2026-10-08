@@ -13,7 +13,7 @@ const Header = () => {
           <Image
             src={assets.profile_img2}
             alt="Photo of Osman Yiğit Uygun"
-            className="w-full h-full scale-175 pl-3"
+            className=""
             priority
           />
         </div>
@@ -22,7 +22,7 @@ const Header = () => {
       <h2 className="flex justify-center items-center gap-2 text-xl md:text-3xl mb-3 font-ovo mt-6">
         <TypeAnimation
           sequence={["Hi, I'm Osman Yiğit Uygun!"]}
-          speed={50}
+          speed={75}
           cursor={false}
           wrapper="span"
         />
@@ -32,23 +32,46 @@ const Header = () => {
       <h1 className="text-3xl sm:text-5xl lg:text-[66px]">
         <TypeAnimation
           sequence={[
-            "Junior CTIS Student at Bilkent University",
-            1000,
-            "Aspiring SDET & Full-Stack Developer",
+            "CTIS Student @ Bilkent University",
+            1500,
+            "Erasmus+ Exchange @ FH Oberösterreich, Austria",
+            1500,
+            "Full-Stack · Mobile · QA / SDET Developer",
+            1500,
           ]}
           speed={50}
+          repeat={Infinity}
           cursor={false}
           wrapper="span"
         />
       </h1>
 
-      <p className="max-w-2xl mx-auto mt-4 text-lg">
-        I am a <strong>QA Engineering Intern at Commencis</strong> and a
-        third-year <strong>CTIS student at Bilkent University</strong> (CGPA
-        3.93/4.00, full scholarship), working toward an <strong>SDET</strong>{" "}
-        profile by combining hands-on <strong>QA/Test Automation</strong>{" "}
-        experience with <strong>full-stack development</strong> skills.
-      </p>
+      <ul className="max-w-2xl mx-auto mt-3 mb-2 text-base sm:text-lg space-y-2.5 text-left inline-flex flex-col text-gray-700">
+        <li className="flex items-start gap-2.5">
+          <span className="text-blue-600 font-bold mt-0.5 shrink-0">▸</span>
+          <span>
+            Third-year <strong>CTIS student at Bilkent University</strong> (CGPA 3.93/4.00, full scholarship)
+          </span>
+        </li>
+        <li className="flex items-start gap-2.5">
+          <span className="text-blue-600 font-bold mt-0.5 shrink-0">▸</span>
+          <span>
+            Currently on an <strong>Erasmus+ exchange semester at FH Oberösterreich (Austria)</strong>
+          </span>
+        </li>
+        <li className="flex items-start gap-2.5">
+          <span className="text-blue-600 font-bold mt-0.5 shrink-0">▸</span>
+          <span>
+            Internship experience at <strong>Akbank</strong> (React Native) &amp; <strong>Commencis</strong> (QA Engineering)
+          </span>
+        </li>
+        <li className="flex items-start gap-2.5">
+          <span className="text-blue-600 font-bold mt-0.5 shrink-0">▸</span>
+          <span>
+            Focused on <strong>full-stack web</strong>, <strong>mobile development</strong>, and <strong>QA / test automation</strong>
+          </span>
+        </li>
+      </ul>
 
       <div className="flex flex-col sm:flex-row items-center gap-4 mt-4">
         <a

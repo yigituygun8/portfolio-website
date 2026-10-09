@@ -7,16 +7,27 @@ const Contact = () => {
     const onSubmit = async (event) => {
         event.preventDefault(); // Prevent default form submission behavior, which is reloading page after submitting
         setResult("Submitting..."); // Show submitting message while waiting for response
-        const formData = new FormData(event.target); // Create a FormData object from the form element to easily collect all input values
+        const form = event.target;
+        const formData = new FormData(form); // Create a FormData object from the form element to easily collect all input values
         formData.append("access_key", "c43e5bff-2875-431a-9718-abbc8670889b");
 
-        const response = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        body: formData
-        });
-        const data = await response.json();
-        console.log(data);
-        setResult(data.success ? "Success!" : "Error");
+        try {
+            const response = await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                body: formData
+            });
+            const data = await response.json();
+            console.log(data);
+            if (data.success) {
+                setResult("Success!");
+                form.reset(); // Kutuları (input ve textarea) temizle
+            } else {
+                setResult(data.message || "Error");
+            }
+        } catch (error) {
+            console.error(error);
+            setResult("Error submitting form. Please try again.");
+        }
     };
 
 

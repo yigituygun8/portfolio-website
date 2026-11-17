@@ -46,6 +46,10 @@ import tailwindcss from './tailwindcss.svg';
 import docker from './docker.svg';
 import profile_img2 from './profile-img2.jpeg';
 import android from './android.svg';
+import react_native from './react-native.svg';
+import typescript from './typescript.svg';
+import fastapi from './fastapi.svg';
+import jest from './jest.svg';
 
 export const assets = {
     user_image,
@@ -96,6 +100,10 @@ export const assets = {
     postman,
     tailwindcss,
     docker,
+    react_native,
+    typescript,
+    fastapi,
+    jest,
 };
 
 export const workData = [
@@ -152,15 +160,17 @@ export const infoList = [
 
 export const toolsData = [
     {title: "Git", icon: assets.git},
-    {title: "SQL", icon: assets.sql},
+    {title: "SQL (MySQL / PostgreSQL)", icon: assets.sql},
     {title: "React", icon: assets.react},
-    {title: "Tailwind CSS", icon: assets.tailwindcss},
-    {title: "Node.js", icon: assets.nodejs},
+    {title: "React Native", icon: assets.react_native},
+    {title: "TypeScript", icon: assets.typescript},
     {title: "Next.js", icon: assets.nextjs},
-    {title: "Flyway", icon: assets.flyway},
+    {title: "Tailwind CSS", icon: assets.tailwindcss},
+    {title: "Node.js / Express", icon: assets.nodejs},
+    {title: "FastAPI", icon: assets.fastapi},
+    {title: "Docker", icon: assets.docker},
     {title: "Linux", icon: assets.linux},
     {title: "Playwright", icon: assets.playwright},
     {title: "Postman", icon: assets.postman},
-    {title: "Docker", icon: assets.docker},
-    {title: "Android Studio", icon: assets.android},
+    {title: "Jest", icon: assets.jest},
 ];

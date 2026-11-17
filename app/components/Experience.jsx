@@ -32,16 +32,18 @@ const Experience = () => {
       current: false,
       bullets: [
         <>
-          Supported QA efforts on a{" "}
-          <strong>European digital banking project (OTP Bank, Hungary)</strong>, gaining hands-on
-          exposure to <strong>API testing (Postman)</strong> and{" "}
-          <strong>network traffic inspection (Charles Proxy)</strong>, alongside
-          defect tracking via <strong>JIRA/XRAY</strong>.
+          Delivered end-to-end <strong>WCAG 2.2 Level A accessibility testing</strong> for the{" "}
+          <strong>OTP Bank European digital banking app</strong> (<strong>React Native, iOS & Android</strong>):{" "}
+          <strong>65 tasks across 14 epics, 49 bugs reported</strong>, tracked in <strong>JIRA/XRAY</strong>.
         </>,
         <>
-          Completed structured onboarding training across QA domains including{" "}
-          <strong>accessibility & exploratory dark mode testing</strong>, building experience with{" "}
-          <strong>non-functional testing standards</strong>.
+          Tested every screen with <strong>Axe, VoiceOver/TalkBack</strong> and{" "}
+          <strong>external keyboard</strong>; used <strong>Postman</strong> and{" "}
+          <strong>Charles Proxy</strong> for API testing.
+        </>,
+        <>
+          Weeks 1-2: analyzed <strong>Pegasus Airlines user stories</strong>, wrote{" "}
+          <strong>test cases</strong> and ran exploratory <strong>dark mode tests</strong>.
         </>,
       ],
     },

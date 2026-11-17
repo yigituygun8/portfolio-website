@@ -114,7 +114,7 @@ const nodes = [
     icon: '⚡',
     title: 'Core Engineering Focus',
     tagline: 'Full-Stack · Mobile · QA Automation',
-    desc: 'Building responsive full-stack applications with Node.js/React, mobile apps with React Native & Kotlin, plus manual testing and unit, API & E2E testing.',
+    desc: 'Building responsive full-stack applications with Node.js/React, mobile apps with React Native, plus manual testing and unit, API & E2E testing.',
     badges: [],
     accent: 'border-emerald-400 hover:border-emerald-600',
     activeBg: 'bg-emerald-50/60',

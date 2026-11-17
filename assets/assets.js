@@ -126,7 +126,7 @@ export const workData = [
     {
         title: 'Uygun Markets',
         description: 'Market waste reduction platform: stores list surplus stock and customers shop it before it goes to waste.',
-        tech: ['Node.js', 'Express.js', 'MySQL', 'Docker'],
+        tech: ['Node.js', 'Express.js', 'MySQL', 'Docker', 'Playwright'],
         badge: 'CTIS 256 · Team of 4',
         bgImage: '/uygun-markets.png',
         link: 'https://github.com/yigituygun8/ctis256-fullstack-project'

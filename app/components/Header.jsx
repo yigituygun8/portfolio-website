@@ -33,11 +33,11 @@ const Header = () => {
         <TypeAnimation
           sequence={[
             "CTIS Student @ Bilkent University",
-            1500,
-            "Erasmus+ Exchange @ FH Oberösterreich, Austria",
-            1500,
-            "Full-Stack · Mobile · QA / SDET Developer",
-            1500,
+            1000,
+            "Erasmus+ Exchange @ University of Applied Sciences Upper Austria",
+            1000,
+            "QA / SDET · Mobile · Web",
+            1000,
           ]}
           speed={50}
           repeat={Infinity}
@@ -56,7 +56,7 @@ const Header = () => {
         <li className="flex items-start gap-2.5">
           <span className="text-blue-600 font-bold mt-0.5 shrink-0">▸</span>
           <span>
-            Currently on an <strong>Erasmus+ exchange semester at FH Oberösterreich (Austria)</strong>
+            Currently on <strong>Erasmus+ at University of Applied Sciences Upper Austria</strong>
           </span>
         </li>
         <li className="flex items-start gap-2.5">
@@ -68,14 +68,14 @@ const Header = () => {
         <li className="flex items-start gap-2.5">
           <span className="text-blue-600 font-bold mt-0.5 shrink-0">▸</span>
           <span>
-            Focused on <strong>full-stack web</strong>, <strong>mobile development</strong>, and <strong>QA / test automation</strong>
+            Focused primarily on <strong>QA / test automation</strong>, <strong>mobile development</strong> & <strong>full-stack web</strong>
           </span>
         </li>
       </ul>
 
       <div className="flex flex-col sm:flex-row items-center gap-4 mt-4">
         <a
-          href="/OsmanYiğitUygun_CV.pdf"
+          href="/OsmanYigitUygun_CV.pdf"
           download
           className="text-[18px] px-10 py-3 border rounded-full border-gray-500 flex items-center gap-2 scale-100 hover:scale-105 transition-transform duration-200 ease-out"
         >

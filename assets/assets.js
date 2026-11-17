@@ -108,26 +108,50 @@ export const assets = {
 
 export const workData = [
     {
-        title: "Uygun Markets - Market Waste Reduction System",
-        description: "EJS & Express.js & MySQL & Docker",
+        title: 'Roamies — Group Trip Planner',
+        description: 'Friends swipe on places and a fairness algorithm turns the votes into a shared, ordered itinerary with AI explanations.',
+        tech: ['React Native', 'TypeScript', 'FastAPI', 'Supabase'],
+        badge: 'Erasmus+ · 2026',
+        bgImage: '/roamies.png',
+        link: 'https://github.com/yigituygun8/roamies'
+    },
+    {
+        title: 'Local RAG Q&A Assistant',
+        description: 'Fully offline document Q&A with local models: chunking, embedding search and answers backed by clickable source citations.',
+        tech: ['Python', 'FastAPI', 'React', 'SQLite'],
+        badge: 'Microsoft AI Innovators',
+        bgImage: '/rag-assistant.png',
+        link: 'https://github.com/yigituygun8/rag-assistant'
+    },
+    {
+        title: 'Uygun Markets',
+        description: 'Market waste reduction platform: stores list surplus stock and customers shop it before it goes to waste.',
+        tech: ['Node.js', 'Express.js', 'MySQL', 'Docker'],
+        badge: 'CTIS 256 · Team of 4',
         bgImage: '/uygun-markets.png',
         link: 'https://github.com/yigituygun8/ctis256-fullstack-project'
     },
     {
         title: 'AROS Loot Shop',
-        description: 'Java OOP, Swing GUI, MVC Architecture',
+        description: 'In-game loot shop built around a UML model, OOP collections and an MVC Swing interface.',
+        tech: ['Java', 'Swing', 'MVC'],
+        badge: 'CTIS 221 · Team project',
         bgImage: '/aros.png',
         link: 'https://github.com/yigituygun8/aros-lootshop'
     },
     {
         title: 'Tile-Clicking Game',
-        description: 'HTML & CSS & JS & DOM API',
+        description: 'Fast-paced browser reflex game written in vanilla JavaScript against the DOM API.',
+        tech: ['HTML', 'CSS', 'JavaScript'],
+        badge: 'Personal project',
         bgImage: '/tile-click.png',
         link: 'https://github.com/yigituygun8/frontend-game-project'
     },
     {
         title: 'AI-Based Garbage Detection',
-        description: 'Python & YOLOv3',
+        description: 'YOLOv3 object detection that flags roadside waste in street-level photos.',
+        tech: ['Python', 'YOLOv3', 'OpenCV'],
+        badge: 'MEF AI Competition · 2nd place',
         bgImage: '/garbage.png',
         link: 'https://github.com/yigituygun8/GarbageDetection_AIProject'
     },

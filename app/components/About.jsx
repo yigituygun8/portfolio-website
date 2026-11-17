@@ -1,9 +1,22 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import { assets, toolsData } from "@/assets/assets.js";
 
 const certifications = [
+  {
+    emoji: '🤖',
+    title: 'Microsoft AI Innovators Internship Program 2026',
+    subtitle: 'Microsoft Turkey — On-Device AI & RAG',
+    details: [
+      'Completed the Microsoft AI Innovators Internship Program (Summer 2026) in the CSA track.',
+      'Built a fully offline document Q&A assistant with Microsoft Foundry Local and a custom RAG pipeline (qwen2.5-1.5b chat, qwen3-embedding-0.6b embeddings).',
+      'FastAPI + React/Vite stack with PDF ingestion, cosine-similarity retrieval, grounded answers, and clickable source citations.'
+    ],
+    color: 'border-cyan-300',
+    hoverColor: 'hover:border-cyan-400',
+    bgAccent: 'bg-cyan-50',
+  },
   {
     emoji: '🏅',
     title: 'Amazon University Engagement Program 2025',
@@ -19,19 +32,6 @@ const certifications = [
   },
   {
     emoji: '🏅',
-    title: 'HackerRank Java Certificate',
-    subtitle: 'Problem Solving & OOP',
-    details: [
-      'Certified proficiency in Java programming and object-oriented design.',
-      'Covered data structures, algorithms, and problem-solving techniques.',
-      'Demonstrated skills in Java collections, generics, and design patterns.'
-    ],
-    color: 'border-green-300',
-    hoverColor: 'hover:border-green-400',
-    bgAccent: 'bg-green-50',
-  },
-  {
-    emoji: '🏅',
     title: 'Google Project Management',
     subtitle: 'Foundations of PM & Agile — Coursera',
     details: [
@@ -42,6 +42,19 @@ const certifications = [
     color: 'border-blue-300',
     hoverColor: 'hover:border-blue-400',
     bgAccent: 'bg-blue-50',
+  },
+  {
+    emoji: '🏅',
+    title: 'HackerRank Java Certificate',
+    subtitle: 'Problem Solving & OOP',
+    details: [
+      'Certified proficiency in Java programming and object-oriented design.',
+      'Covered data structures, algorithms, and problem-solving techniques.',
+      'Demonstrated skills in Java collections, generics, and design patterns.'
+    ],
+    color: 'border-green-300',
+    hoverColor: 'hover:border-green-400',
+    bgAccent: 'bg-green-50',
   },
   {
     emoji: '🌐',
@@ -78,7 +91,7 @@ const nodes = [
     title: 'Academic Journey',
     tagline: 'Bilkent CTIS ➔ FH Oberösterreich (Erasmus+)',
     desc: 'Third-year CTIS student at Bilkent (CGPA 3.93/4.00, Full Scholarship). Currently on Erasmus+ exchange in Austria.',
-    badges: ['Bilkent (3.93 CGPA)', 'FH Oberösterreich 🇦🇹', 'Class of 2028'],
+    badges: [],
     accent: 'border-blue-400 hover:border-blue-600',
     activeBg: 'bg-blue-50/60',
     lineColor: '#2563eb', // blue-600
@@ -90,7 +103,7 @@ const nodes = [
     title: 'Industry Experience',
     tagline: 'Akbank Mobile & Commencis QA',
     desc: 'React Native Intern at Akbank (Payment Systems) & QA Intern at Commencis on OTP Bank European digital banking.',
-    badges: ['Akbank (React Native)', 'Commencis (QA/SDET)', 'OTP Bank Project'],
+    badges: [],
     accent: 'border-indigo-400 hover:border-indigo-600',
     activeBg: 'bg-indigo-50/60',
     lineColor: '#4f46e5', // indigo-600
@@ -101,8 +114,8 @@ const nodes = [
     icon: '⚡',
     title: 'Core Engineering Focus',
     tagline: 'Full-Stack · Mobile · QA Automation',
-    desc: 'Building responsive full-stack applications with Node.js/React, mobile apps with React Native & Kotlin, plus Playwright test automation.',
-    badges: ['React Native & Kotlin', 'Node.js & Express', 'SDET / Playwright'],
+    desc: 'Building responsive full-stack applications with Node.js/React, mobile apps with React Native & Kotlin, plus manual testing and unit, API & E2E testing.',
+    badges: [],
     accent: 'border-emerald-400 hover:border-emerald-600',
     activeBg: 'bg-emerald-50/60',
     lineColor: '#059669', // emerald-600
@@ -113,8 +126,8 @@ const nodes = [
     icon: '🤝',
     title: 'Teaching & Mentorship',
     tagline: 'Bilkent TA & 1-on-1 Tutoring',
-    desc: 'Mentored 50+ students in C and Data Structures labs at Bilkent. Also provide private tutoring for university CS and high school exam prep.',
-    badges: ['Bilkent TA (50+ students)', 'C & DSA Labs', 'Private Tutoring (Java/C/YKS)'],
+    desc: 'Mentored 50+ students in C and Data Structures labs at Bilkent. Also provide private tutoring for university CS (Python, Java, DSA) and high school exam prep.',
+    badges: [],
     accent: 'border-amber-400 hover:border-amber-600',
     activeBg: 'bg-amber-50/60',
     lineColor: '#d97706', // amber-600
@@ -124,8 +137,65 @@ const nodes = [
 
 const About = () => {
   const [currentCert, setCurrentCert] = useState(0);
-  const [showDetails, setShowDetails] = useState(true);
+  const [openCert, setOpenCert] = useState(null);
   const [activeNode, setActiveNode] = useState(null);
+  const modalRef = useRef(null);
+  const lastFocusedRef = useRef(null);
+  const isModalOpen = openCert !== null;
+
+  // Close the certificate modal with Escape and lock page scroll while it is open
+  useEffect(() => {
+    if (!isModalOpen) return;
+
+    const handleKeyDown = (event) => {
+      if (event.key === 'Escape') setOpenCert(null);
+    };
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    document.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [isModalOpen]);
+
+  // Move focus into the modal when it opens and restore it when it closes
+  useEffect(() => {
+    if (isModalOpen) {
+      modalRef.current?.focus();
+    } else if (lastFocusedRef.current) {
+      lastFocusedRef.current.focus();
+      lastFocusedRef.current = null;
+    }
+  }, [isModalOpen]);
+
+  const openCertificate = (index) => {
+    lastFocusedRef.current = document.activeElement;
+    setOpenCert(index);
+  };
+
+  // Keep Tab focus inside the dialog
+  const trapModalFocus = (event) => {
+    if (event.key !== 'Tab' || !modalRef.current) return;
+    const focusable = modalRef.current.querySelectorAll(
+      'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+    );
+    if (focusable.length === 0) return;
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+
+    if (event.shiftKey && document.activeElement === first) {
+      event.preventDefault();
+      last.focus();
+    } else if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault();
+      first.focus();
+    }
+  };
+
+  const activeCertData = openCert !== null ? certifications[openCert] : null;
 
   return (
     <section id="about" className="w-full px-6 sm:px-[8%] md:px-[10%] py-12 font-jetbrains scroll-mt-24">
@@ -334,35 +404,23 @@ const About = () => {
             {(() => {
               const cert = certifications[currentCert];
               return (
-                <div
-                  onClick={() => setShowDetails(!showDetails)}
-                  className={`rounded-xl border-[1.5px] ${cert.color} ${cert.bgAccent} p-4 transition-all duration-300 cursor-pointer shadow-xs hover:shadow-sm`}
+                <button
+                  type="button"
+                  onClick={() => openCertificate(currentCert)}
+                  aria-haspopup="dialog"
+                  className={`w-full text-left rounded-xl border-[1.5px] ${cert.color} ${cert.bgAccent} p-4 transition-all duration-300 cursor-pointer shadow-xs hover:shadow-md hover:-translate-y-0.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2`}
                 >
-                  <div className="flex items-start justify-between gap-3">
-                    <div className="flex items-center gap-3">
+                  <span className="flex items-start justify-between gap-3">
+                    <span className="flex items-center gap-3">
                       <span className="text-2xl shrink-0">{cert.emoji}</span>
-                      <div>
-                        <p className="font-bold text-gray-900 text-sm leading-tight">{cert.title}</p>
-                        <p className="text-gray-500 text-xs mt-0.5">{cert.subtitle}</p>
-                      </div>
-                    </div>
-                    <span className="text-xs text-gray-400 font-mono mt-1 shrink-0">
-                      {showDetails ? '▲ Hide' : '▼ Details'}
+                      <span className="block">
+                        <span className="block font-bold text-gray-900 text-sm leading-tight">{cert.title}</span>
+                        <span className="block text-gray-500 text-xs mt-0.5">{cert.subtitle}</span>
+                      </span>
                     </span>
-                  </div>
-
-                  {/* Expandable Details Content */}
-                  {showDetails && (
-                    <div className="mt-3 pt-3 border-t border-gray-200/70 text-xs text-gray-600 space-y-1.5 animate-fadeIn">
-                      {cert.details.map((detail, idx) => (
-                        <p key={idx} className="flex items-start gap-1.5 leading-relaxed">
-                          <span className="text-gray-400 mt-0.5 shrink-0">▸</span>
-                          <span>{detail}</span>
-                        </p>
-                      ))}
-                    </div>
-                  )}
-                </div>
+                    <span className="text-xs text-gray-400 font-mono mt-1 shrink-0">Details ↗</span>
+                  </span>
+                </button>
               );
             })()}
           </div>
@@ -384,6 +442,98 @@ const About = () => {
         </div>
 
       </div>
+
+      {/* ===================== CERTIFICATION DETAILS MODAL ===================== */}
+      {activeCertData && (
+        <div
+          className="fixed inset-0 z-[100] flex items-center justify-center p-4 animate-overlay-in"
+          onKeyDown={trapModalFocus}
+        >
+          {/* Dimmed backdrop */}
+          <div
+            className="absolute inset-0 bg-gray-900/50 backdrop-blur-[2px]"
+            onClick={() => setOpenCert(null)}
+            aria-hidden="true"
+          />
+
+          {/* Dialog */}
+          <div
+            ref={modalRef}
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="cert-modal-title"
+            aria-describedby="cert-modal-description"
+            tabIndex={-1}
+            className="relative w-full max-w-md max-h-[calc(100vh-2rem)] overflow-y-auto rounded-2xl border border-gray-200 bg-white shadow-2xl animate-modal-in focus:outline-none"
+          >
+            <div className={`border-b ${activeCertData.color} ${activeCertData.bgAccent} px-5 py-4 pr-14`}>
+              <div className="flex items-center gap-3">
+                <span className="text-3xl shrink-0">{activeCertData.emoji}</span>
+                <div>
+                  <h3 id="cert-modal-title" className="font-bold text-gray-900 text-base leading-snug">
+                    {activeCertData.title}
+                  </h3>
+                  <p className="text-gray-500 text-xs mt-0.5">{activeCertData.subtitle}</p>
+                </div>
+              </div>
+              <button
+                type="button"
+                onClick={() => setOpenCert(null)}
+                className="absolute right-3 top-3 w-8 h-8 flex items-center justify-center rounded-full border border-gray-200 bg-white/80 text-gray-500 hover:text-gray-900 hover:bg-white transition-colors cursor-pointer"
+                aria-label="Close certificate details"
+              >
+                ✕
+              </button>
+            </div>
+
+            <div id="cert-modal-description" className="px-5 py-4">
+              <p className="text-[11px] font-semibold tracking-wide text-gray-400 uppercase mb-2">
+                What I did
+              </p>
+              <ul className="space-y-2 text-sm text-gray-600">
+                {activeCertData.details.map((detail, idx) => (
+                  <li key={idx} className="flex items-start gap-2 leading-relaxed">
+                    <span className="text-gray-400 mt-0.5 shrink-0">▸</span>
+                    <span>{detail}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="flex items-center justify-between gap-3 border-t border-gray-100 bg-gray-50/60 px-5 py-3">
+              <span className="text-xs text-gray-400 font-mono">
+                {openCert + 1} / {certifications.length}
+              </span>
+              <div className="flex items-center gap-2">
+                <button
+                  type="button"
+                  onClick={() => {
+                    const next = (openCert - 1 + certifications.length) % certifications.length;
+                    setOpenCert(next);
+                    setCurrentCert(next);
+                  }}
+                  className="w-7 h-7 rounded-full border border-gray-300 hover:border-gray-600 hover:bg-white flex items-center justify-center text-xs text-gray-700 transition-colors cursor-pointer"
+                  aria-label="Previous certification"
+                >
+                  ←
+                </button>
+                <button
+                  type="button"
+                  onClick={() => {
+                    const next = (openCert + 1) % certifications.length;
+                    setOpenCert(next);
+                    setCurrentCert(next);
+                  }}
+                  className="w-7 h-7 rounded-full border border-gray-300 hover:border-gray-600 hover:bg-white flex items-center justify-center text-xs text-gray-700 transition-colors cursor-pointer"
+                  aria-label="Next certification"
+                >
+                  →
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
 
     </section>
   );
